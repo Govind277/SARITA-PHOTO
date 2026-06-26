@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARITA PHOTO - Professional Photography Studio</title>
+    <title>SARITA PHOTO - Professional Digital Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="no-select">
 
-    <!-- Main Header / Navbar -->
     <header class="customHeader">
         <div class="container header-flex">
             <div class="logo">
@@ -16,48 +15,40 @@
             </div>
             <nav class="for-pc">
                 <a href="#hero" class="sub-menu">होम</a>
-                <a href="#portfolio" class="sub-menu">पोर्टफोलियो</a>
                 <a href="#features" class="sub-menu">फ़ीचर्स</a>
                 <a href="#booking" class="sub-menu">बुक करें</a>
             </nav>
             <div class="btn-group">
-                <button class="iconed-button-alt pointer" onclick="openLoginModal()">लॉगिन</button>
-                <button class="secondaryButton pointer" onclick="openLoginModal()">साइनअप</button>
+                <button class="gallery-premium-btn pointer" onclick="openLoginModal()">📸 क्लाइंट गैलरी (फोटो सिलेक्शन)</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="introduce-section" id="hero">
         <div class="container hero-container">
-            <div class="business-bordered-text">Welcome to Bikaner's Premium Studio</div>
+            <div class="business-bordered-text">Bikaner's Ultimate Premium Studio</div>
             <h1>SARITA PHOTO</h1>
             <p class="owner-text">Owner: Manoj Kumar Panwar</p>
             <p class="description">
-                हम आपके जीवन के सबसे खूबसूरत और अनमोल पलों को अत्याधुनिक AI फेस रेकग्निशन टेक्नोलॉजी और प्रोफेशनल फोटोग्राफी के ज़रिए सहेजने में मदद करते हैं।
+                अत्याधुनिक AI फेस रेkग्निशन टेक्नोलॉजी, कस्टमाइज्ड डिजिटल मोनोग्राम डिज़ाइन्स और हाई-एंड वेडिंग फोटोग्राफी का एकमात्र स्थान।
             </p>
             <div class="hero-btns">
-                <button class="secondaryButton big-btn" onclick="openLoginModal()">📸 फोटो सिलेक्शन लॉगिन</button>
+                <button class="gallery-premium-btn big-btn" onclick="openLoginModal()">📸 फोटो सिलेक्शन पोर्टल खोलें</button>
                 <a href="#booking" class="iconed-button-alt big-btn" style="text-decoration: none;">संपर्क करें</a>
             </div>
         </div>
     </section>
 
-    <!-- DYNAMIC SELECTION GALLERY (यह सिर्फ सही कोड डालने पर ही खुलेगी) -->
     <section class="selection-section" id="selectionGallery" style="display: none;">
         <div class="container">
             <div class="section-header text-center">
                 <div class="business-bordered-text mx-auto" id="clientWelcomeName">क्लाइंट गैलरी</div>
                 <h2>अपनी तस्वीरें सिलेक्ट करें</h2>
-                <p class="section-subtitle">तस्वीरों को पूरी स्क्रीन पर देखने के लिए क्लिक करें और अपनी पसंदीदा फोटोज़ को टिक (✔) करें।</p>
+                <p class="section-subtitle">तस्वीरों को पूरी स्क्रीन पर देखने के लिए क्लिक करें। आगे-पीछे करने के लिए Next/Back बटन्स का उपयोग करें।</p>
             </div>
 
-            <!-- फोटो ग्रिड -->
-            <div class="selection-grid" id="photosGrid">
-                <!-- जावास्क्रिप्ट के ज़रिए यहाँ आपकी गूगल ड्राइव की फोटोज़ अपने आप लोड होंगी -->
-            </div>
+            <div class="selection-grid" id="photosGrid"></div>
 
-            <!-- सिलेक्शन सबमिट करने का बार -->
             <div class="submit-bar">
                 <div class="counter-text"><span id="selectedCount">0</span> फोटोज़ चुनी गईं</div>
                 <button class="secondaryButton big-btn" id="submitSelectionBtn" onclick="submitMySelection()">मनोज जी को सिलेक्शन भेजें</button>
@@ -65,7 +56,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="container">
             <div class="section-header text-center">
@@ -81,55 +71,65 @@
         </div>
     </section>
 
-    <!-- Booking Section -->
     <section class="booking-section" id="booking">
         <div class="container text-center">
             <div class="business-bordered-text mx-auto">बुक करें</div>
             <h2>क्या आप अपना इवेंट बुक करना चाहते हैं?</h2>
             <p class="section-subtitle">सीधे हमसे WhatsApp पर बात करें।</p>
             <div class="mt-4">
-                <a href="https://wa.me/9185798693467?text=Hello%20SARITA%20PHOTO,%20I%20want%20to%20query%20for%20a%20booking." target="_blank" class="secondaryButton pointer big-btn whatsapp-btn">💬 Query for Booking (WhatsApp)</a>
+                <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO,%20I%20want%20to%20query%20for%20a%20booking." target="_blank" class="secondaryButton pointer big-btn whatsapp-btn">💬 Query for Booking (WhatsApp)</a>
             </div>
         </div>
     </section>
 
-    <!-- LOGIN MODAL (POPUP BOX) -->
     <div class="modal-overlay" id="loginModal">
         <div class="modal-box">
-            <h3>क्लाइंट गैलरी लॉगिन</h3>
-            <p>मनोज जी द्वारा दिया गया अपना **क्लाइंट कोड** यहाँ डालें:</p>
-            <input type="text" id="clientCodeInput" placeholder="उदा: RAVI2026" autocomplete="off">
+            <div class="modal-badge">SECURITY PORTAL</div>
+            <h3>क्लाइंट फोटो सिलेक्शन लॉगिन</h3>
+            <p style="margin-bottom: 20px; color: #a3afbf;">गैलरी खोलने के लिए अपना नाम और मनोज जी द्वारा दिया गया कोड डालें:</p>
+            
+            <input type="text" id="clientNameInput" placeholder="अपना नाम (जैसे: Ravi Kumar)" autocomplete="off">
+            <input type="text" id="clientCodeInput" placeholder="क्लाइंट कोड (जैसे: TEST10)" autocomplete="off">
+            
             <div class="modal-btns">
                 <button class="iconed-button-alt" onclick="closeLoginModal()">बंद करें</button>
-                <button class="secondaryButton" id="loginSubmitBtn" onclick="checkClientCode()">गैलरी खोलें</button>
+                <button class="secondaryButton" id="loginSubmitBtn" onclick="checkClientCode()">गैलरी लोड करें ⚡</button>
             </div>
         </div>
     </div>
 
-    <!-- FULL SCREEN LIGHTBOX VIEW -->
     <div class="lightbox" id="lightbox">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <img id="lightboxImg" src="" alt="Full Screen View" class="protect-img">
+        <span class="close-lightbox" onclick="closeLightbox()">×</span>
+        
+        <button class="lightbox-arrow arrow-left" onclick="changeLightboxImage(-1)">◀</button>
+        
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Full Screen View" class="protect-img">
+            <div id="lightboxImgName" class="lightbox-img-name"></div>
+        </div>
+        
+        <button class="lightbox-arrow arrow-right" onclick="changeLightboxImage(1)">▶</button>
     </div>
 
-    <!-- DYNAMIC JAVASCRIPT CODE (कंट्रोल रूम लिंक कनेक्टेड) -->
     <script>
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxZqtbLaEC611pbaQv4DS1yBsAW276A98ylv0KWv4xauaE7cf3IGcXHvUbmudePZoGkVA/exec";
         let currentClientCode = "";
         let currentClientName = "";
         let allLoadedPhotos = [];
         let selectedPhotoNames = [];
+        let currentLightboxIndex = 0;
 
         function openLoginModal() { document.getElementById('loginModal').classList.add('active'); }
         function closeLoginModal() { document.getElementById('loginModal').classList.remove('active'); }
 
-        // 1. क्लाइंट कोड चेक करके गूगल ड्राइव से फोटो लाने का फंक्शन
         async function checkClientCode() {
+            const nameInput = document.getElementById('clientNameInput').value.trim();
             const codeInput = document.getElementById('clientCodeInput').value.trim();
-            if(!codeInput) { alert("कृपया कोड दर्ज करें!"); return; }
+            
+            if(!nameInput || !codeInput) { alert("कृपया अपना नाम और क्लाइंट कोड दोनों दर्ज करें!"); return; }
             
             const btn = document.getElementById('loginSubmitBtn');
-            btn.innerText = "चेक किया जा रहा है...";
+            btn.innerText = "वेरिफाई किया जा रहा है...";
             btn.disabled = true;
 
             try {
@@ -141,7 +141,7 @@
 
                 if(result.status === "success") {
                     currentClientCode = codeInput;
-                    currentClientName = result.clientName;
+                    currentClientName = result.clientName; // Sheet se असली नाम लेगा
                     allLoadedPhotos = result.photos;
                     
                     document.getElementById('clientWelcomeName').innerText = "स्वागत है, " + currentClientName;
@@ -156,28 +156,26 @@
             } catch(err) {
                 alert("सर्वर से कनेक्ट करने में समस्या आई। कृपया पुनः प्रयास करें।");
             } finally {
-                btn.innerText = "गैलरी खोलें";
+                btn.innerText = "गैलरी लोड करें ⚡";
                 btn.disabled = false;
             }
         }
 
-        // 2. तस्वीरों को एंटी-डाउनलोड सुरक्षा के साथ ग्रिड में दिखाना
         function renderPhotos(photos) {
             const grid = document.getElementById('photosGrid');
             grid.innerHTML = "";
             selectedPhotoNames = [];
             updateCounter();
 
-            if(photos.length === 0) { grid.innerHTML = "<p style='color:#a3afbf; text-align:center; grid-column:1/-1;'>इस फोल्डर में कोई तस्वीरें नहीं मिलीं।</p>"; return; }
+            if(photos.length === 0) { grid.innerHTML = "<p style='color:#a3afbf; text-align:center; grid-column:1/-1;'>कोई तस्वीरें नहीं मिलीं।</p>"; return; }
 
-            photos.forEach(photo => {
+            photos.forEach((photo, index) => {
                 const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w800`;
-                
                 const item = document.createElement('div');
                 item.className = "select-item";
                 
                 item.innerHTML = `
-                    <div class="img-wrapper" onclick="openLightbox('${imgUrl}')">
+                    <div class="img-wrapper" onclick="openLightbox(${index})">
                         <img src="${imgUrl}" alt="${photo.name}" class="protect-img" loading="lazy">
                         <div class="screenshot-overlay"></div>
                     </div>
@@ -198,10 +196,30 @@
         }
 
         function updateCounter() { document.getElementById('selectedCount').innerText = selectedPhotoNames.length; }
-        function openLightbox(url) { document.getElementById('lightboxImg').src = url; document.getElementById('lightbox').classList.add('active'); }
+
+        // Lightbox with Next / Back
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            showLightboxImage();
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function showLightboxImage() {
+            const photo = allLoadedPhotos[currentLightboxIndex];
+            const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w1200`; // Full HD Screen View
+            document.getElementById('lightboxImg').src = imgUrl;
+            document.getElementById('lightboxImgName').innerText = photo.name;
+        }
+
+        function changeLightboxImage(direction) {
+            currentLightboxIndex += direction;
+            if(currentLightboxIndex >= allLoadedPhotos.length) currentLightboxIndex = 0; // Loop to start
+            if(currentLightboxIndex < 0) currentLightboxIndex = allLoadedPhotos.length - 1; // Loop to end
+            showLightboxImage();
+        }
+
         function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
 
-        // 3. सिलेक्शन को वापस गूगल शीट में भेजने का फंक्शन
         async function submitMySelection() {
             if(selectedPhotoNames.length === 0) { alert("कृपया सबमिट करने से पहले कम से कम 1 फोटो सिलेक्ट करें!"); return; }
             if(!confirm(`क्या आप इन ${selectedPhotoNames.length} तस्वीरों का सिलेक्शन मनोज जी को भेजना चाहते हैं?`)) return;
@@ -226,19 +244,18 @@
                     window.location.reload();
                 }
             } catch(err) {
-                alert("भेजने में कोई गड़बड़ हुई, कृपया दोबारा दबाएं।");
+                alert("भेजने में कोई गड़बड़ हुई, कृपया दोबारा प्रयास करें।");
             } finally {
                 btn.innerText = "मनोज जी को सिलेक्शन भेजें";
                 btn.disabled = false;
             }
         }
 
-        // 4. एंटी-डाउनलोड सिक्योरिटी इंजन (राइट क्लिक और लॉन्ग प्रेस लॉक)
         function applyAntiDownload() {
             const targets = document.querySelectorAll('.protect-img, .screenshot-overlay, .img-wrapper');
             targets.forEach(el => {
-                el.addEventListener('contextmenu', e => e.preventDefault()); // राइट क्लिक बंद
-                el.addEventListener('dragstart', e => e.preventDefault());   // फोटो खींच कर ले जाना बंद
+                el.addEventListener('contextmenu', e => e.preventDefault());
+                el.addEventListener('dragstart', e => e.preventDefault());
             });
         }
         document.addEventListener('contextmenu', e => e.preventDefault());
