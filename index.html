@@ -4,36 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SARITA PHOTO - Professional Photography Studio</title>
-    <!-- CSS File Link -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="no-select">
 
     <!-- Main Header / Navbar -->
     <header class="customHeader">
         <div class="container header-flex">
-            <!-- Studio Logo -->
             <div class="logo">
                 <span class="logo-text">SARITA PHOTO</span>
             </div>
-            
-            <!-- Navigation Links -->
             <nav class="for-pc">
                 <a href="#hero" class="sub-menu">होम</a>
                 <a href="#portfolio" class="sub-menu">पोर्टफोलियो</a>
                 <a href="#features" class="sub-menu">फ़ीचर्स</a>
                 <a href="#booking" class="sub-menu">बुक करें</a>
             </nav>
-
-            <!-- Buttons -->
             <div class="btn-group">
-                <button class="iconed-button-alt">लॉगिन</button>
-                <button class="secondaryButton">साइनअप</button>
+                <button class="iconed-button-alt pointer" onclick="openLoginModal()">लॉगिन</button>
+                <button class="secondaryButton pointer" onclick="openLoginModal()">साइनअप</button>
             </div>
         </div>
     </header>
 
-    <!-- Hero / Introduce Section -->
+    <!-- Hero Section -->
     <section class="introduce-section" id="hero">
         <div class="container hero-container">
             <div class="business-bordered-text">Welcome to Bikaner's Premium Studio</div>
@@ -43,102 +37,211 @@
                 हम आपके जीवन के सबसे खूबसूरत और अनमोल पलों को अत्याधुनिक AI फेस रेकग्निशन टेक्नोलॉजी और प्रोफेशनल फोटोग्राफी के ज़रिए सहेजने में मदद करते हैं।
             </p>
             <div class="hero-btns">
-                <a href="#portfolio" class="secondaryButton big-btn" style="text-decoration: none;">गैलरी देखें</a>
+                <button class="secondaryButton big-btn" onclick="openLoginModal()">📸 फोटो सिलेक्शन लॉगिन</button>
                 <a href="#booking" class="iconed-button-alt big-btn" style="text-decoration: none;">संपर्क करें</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio / Gallery Section -->
-    <section class="portfolio-section" id="portfolio">
+    <!-- DYNAMIC SELECTION GALLERY (यह सिर्फ सही कोड डालने पर ही खुलेगी) -->
+    <section class="selection-section" id="selectionGallery" style="display: none;">
         <div class="container">
             <div class="section-header text-center">
-                <div class="business-bordered-text mx-auto">हमारा काम</div>
-                <h2>शॉर्ट्स और पोर्टफोलियो</h2>
-                <p class="section-subtitle">SARITA PHOTO द्वारा कैप्चर किए गए कुछ बेहतरीन और अनमोल पल</p>
+                <div class="business-bordered-text mx-auto" id="clientWelcomeName">क्लाइंट गैलरी</div>
+                <h2>अपनी तस्वीरें सिलेक्ट करें</h2>
+                <p class="section-subtitle">तस्वीरों को पूरी स्क्रीन पर देखने के लिए क्लिक करें और अपनी पसंदीदा फोटोज़ को टिक (✔) करें।</p>
             </div>
 
-            <!-- Gallery Grid -->
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?w=600&auto=format&fit=crop" alt="Sarita Photo - Wedding">
-                    <div class="gallery-overlay">
-                        <h3>वेडिंग फोटोग्राफी</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop" alt="Sarita Photo - Event">
-                    <div class="gallery-overlay">
-                        <h3>ट्रेडिशनल इवेंट्स</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&auto=format&fit=crop" alt="Sarita Photo - Portrait">
-                    <div class="gallery-overlay">
-                        <h3>प्रोफेशनल पोर्ट्रेट</h3>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&auto=format&fit=crop" alt="Sarita Photo - Culture">
-                    <div class="gallery-overlay">
-                        <h3>हेरิตेज और कल्चर</h3>
-                    </div>
-                </div>
+            <!-- फोटो ग्रिड -->
+            <div class="selection-grid" id="photosGrid">
+                <!-- जावास्क्रिप्ट के ज़रिए यहाँ आपकी गूगल ड्राइव की फोटोज़ अपने आप लोड होंगी -->
+            </div>
+
+            <!-- सिलेक्शन सबमिट करने का बार -->
+            <div class="submit-bar">
+                <div class="counter-text"><span id="selectedCount">0</span> फोटोज़ चुनी गईं</div>
+                <button class="secondaryButton big-btn" id="submitSelectionBtn" onclick="submitMySelection()">मनोज जी को सिलेक्शन भेजें</button>
             </div>
         </div>
     </section>
 
-    <!-- Features / Services Section -->
+    <!-- Features Section -->
     <section class="features-section" id="features">
         <div class="container">
             <div class="section-header text-center">
                 <div class="business-bordered-text mx-auto">हमारी विशेषताएँ</div>
                 <h2>आधुनिक डिजिटल स्टूडियो फ़ीचर्स</h2>
-                <p class="section-subtitle">हम पारंपरिक फोटोग्राफी के साथ-साथ आपको देते हैं एकदम नए ज़माने की डिजिटल सुविधाएँ</p>
             </div>
-
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📸</div>
-                    <h3>प्रोफेशनल फोटोग्राफी</h3>
-                    <p>शादी-ब्याह, प्री-वेडिंग शूट, और ट्रेडिशनल इवेंट्स के लिए बीकानेर रीजन की सर्वश्रेष्ठ प्रोफेशनल फोटोग्राफी सेवाएँ।</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI फेस रिकग्निशन</h3>
-                    <p>अत्याधुनिक AI तकनीक, जिससे आपके मेहमान केवल एक सेल्फी क्लिक करके पूरे इवेंट में से अपनी तस्वीरें तुरंत ढूंढ सकते हैं।</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>डिजिटल स्टूडियो डिज़ाइन्स</h3>
-                    <p>आपके खास दिनों के लिए कस्टमाइज्ड डिजिटल मोनोग्राम, इनविटेशन कार्ड्स और सोशल मीडिया पोस्ट्स की बेहतरीन डिजाइनिंग।</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>सुपरफास्ट डिलीवरी</h3>
-                    <p>बिना किसी देरी के डिजिटल क्लाउड और हाई-स्पीड टूल्स के ज़रिए आपकी सभी तस्वीरों की सुरक्षित और तुरंत डिलीवरी।</p>
-                </div>
+                <div class="feature-card"><div class="feature-icon">📸</div><h3>प्रोफेशनल फोटोग्राफी</h3><p>शादी-ब्याह और ट्रेडिशनल इवेंट्स के लिए बीकानेर रीजन की सर्वश्रेष्ठ सेवाएँ।</p></div>
+                <div class="feature-card"><div class="feature-icon">🤖</div><h3>AI फेस रिकग्निशन</h3><p>अत्याधुनिक AI तकनीक, जिससे मेहमान केवल एक सेल्फी से अपनी तस्वीरें ढूंढ सकते हैं।</p></div>
+                <div class="feature-card"><div class="feature-icon">🎨</div><h3>डिजिटल स्टूडियो डिज़ाइन्स</h3><p>कस्टमाइज्ड डिजिटल मोनोग्राम और इनविटेशन कार्ड्स की बेहतरीन डिजाइनिंग।</p></div>
+                <div class="feature-card"><div class="feature-icon">⚡</div><h3>सुपरफास्ट डिलीवरी</h3><p>डिजिटल क्लाउड के ज़रिए आपकी सभी तस्वीरों की सुरक्षित और तुरंत डिलीवरी।</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Booking Query Section (WhatsApp Direct) -->
+    <!-- Booking Section -->
     <section class="booking-section" id="booking">
         <div class="container text-center">
             <div class="business-bordered-text mx-auto">बुक करें</div>
             <h2>क्या आप अपना इवेंट बुक करना चाहते हैं?</h2>
-            <p class="section-subtitle">
-                अपनी तारीखें सुरक्षित करने और कस्टमाइज्ड पैकेजेस की जानकारी के लिए सीधे हमसे WhatsApp पर बात करें।
-            </p>
+            <p class="section-subtitle">सीधे हमसे WhatsApp पर बात करें।</p>
             <div class="mt-4">
-                <a href="https://wa.me/9185798693467?text=Hello%20SARITA%20PHOTO,%20I%20want%20to%20query%20for%20a%20booking." 
-                   target="_blank" 
-                   class="secondaryButton pointer big-btn whatsapp-btn">
-                   💬 Query for Booking (WhatsApp)
-                </a>
+                <a href="https://wa.me/9185798693467?text=Hello%20SARITA%20PHOTO,%20I%20want%20to%20query%20for%20a%20booking." target="_blank" class="secondaryButton pointer big-btn whatsapp-btn">💬 Query for Booking (WhatsApp)</a>
             </div>
         </div>
     </section>
 
+    <!-- LOGIN MODAL (POPUP BOX) -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-box">
+            <h3>क्लाइंट गैलरी लॉगिन</h3>
+            <p>मनोज जी द्वारा दिया गया अपना **क्लाइंट कोड** यहाँ डालें:</p>
+            <input type="text" id="clientCodeInput" placeholder="उदा: RAVI2026" autocomplete="off">
+            <div class="modal-btns">
+                <button class="iconed-button-alt" onclick="closeLoginModal()">बंद करें</button>
+                <button class="secondaryButton" id="loginSubmitBtn" onclick="checkClientCode()">गैलरी खोलें</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FULL SCREEN LIGHTBOX VIEW -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img id="lightboxImg" src="" alt="Full Screen View" class="protect-img">
+    </div>
+
+    <!-- DYNAMIC JAVASCRIPT CODE (कंट्रोल रूम लिंक कनेक्टेड) -->
+    <script>
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxZqtbLaEC611pbaQv4DS1yBsAW276A98ylv0KWv4xauaE7cf3IGcXHvUbmudePZoGkVA/exec";
+        let currentClientCode = "";
+        let currentClientName = "";
+        let allLoadedPhotos = [];
+        let selectedPhotoNames = [];
+
+        function openLoginModal() { document.getElementById('loginModal').classList.add('active'); }
+        function closeLoginModal() { document.getElementById('loginModal').classList.remove('active'); }
+
+        // 1. क्लाइंट कोड चेक करके गूगल ड्राइव से फोटो लाने का फंक्शन
+        async function checkClientCode() {
+            const codeInput = document.getElementById('clientCodeInput').value.trim();
+            if(!codeInput) { alert("कृपया कोड दर्ज करें!"); return; }
+            
+            const btn = document.getElementById('loginSubmitBtn');
+            btn.innerText = "चेक किया जा रहा है...";
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({ action: "login", clientCode: codeInput })
+                });
+                const result = await response.json();
+
+                if(result.status === "success") {
+                    currentClientCode = codeInput;
+                    currentClientName = result.clientName;
+                    allLoadedPhotos = result.photos;
+                    
+                    document.getElementById('clientWelcomeName').innerText = "स्वागत है, " + currentClientName;
+                    renderPhotos(result.photos);
+                    
+                    document.getElementById('selectionGallery').style.display = "block";
+                    closeLoginModal();
+                    document.getElementById('selectionGallery').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert(result.message);
+                }
+            } catch(err) {
+                alert("सर्वर से कनेक्ट करने में समस्या आई। कृपया पुनः प्रयास करें।");
+            } finally {
+                btn.innerText = "गैलरी खोलें";
+                btn.disabled = false;
+            }
+        }
+
+        // 2. तस्वीरों को एंटी-डाउनलोड सुरक्षा के साथ ग्रिड में दिखाना
+        function renderPhotos(photos) {
+            const grid = document.getElementById('photosGrid');
+            grid.innerHTML = "";
+            selectedPhotoNames = [];
+            updateCounter();
+
+            if(photos.length === 0) { grid.innerHTML = "<p style='color:#a3afbf; text-align:center; grid-column:1/-1;'>इस फोल्डर में कोई तस्वीरें नहीं मिलीं।</p>"; return; }
+
+            photos.forEach(photo => {
+                const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w800`;
+                
+                const item = document.createElement('div');
+                item.className = "select-item";
+                
+                item.innerHTML = `
+                    <div class="img-wrapper" onclick="openLightbox('${imgUrl}')">
+                        <img src="${imgUrl}" alt="${photo.name}" class="protect-img" loading="lazy">
+                        <div class="screenshot-overlay"></div>
+                    </div>
+                    <div class="select-checkbox-zone">
+                        <input type="checkbox" id="check_${photo.id}" value="${photo.name}" onchange="toggleSelectPhoto(this)">
+                        <label for="check_${photo.id}">सिलेक्ट करें</label>
+                    </div>
+                `;
+                grid.appendChild(item);
+            });
+            applyAntiDownload();
+        }
+
+        function toggleSelectPhoto(cb) {
+            if(cb.checked) { selectedPhotoNames.push(cb.value); } 
+            else { selectedPhotoNames = selectedPhotoNames.filter(name => name !== cb.value); }
+            updateCounter();
+        }
+
+        function updateCounter() { document.getElementById('selectedCount').innerText = selectedPhotoNames.length; }
+        function openLightbox(url) { document.getElementById('lightboxImg').src = url; document.getElementById('lightbox').classList.add('active'); }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+
+        // 3. सिलेक्शन को वापस गूगल शीट में भेजने का फंक्शन
+        async function submitMySelection() {
+            if(selectedPhotoNames.length === 0) { alert("कृपया सबमिट करने से पहले कम से कम 1 फोटो सिलेक्ट करें!"); return; }
+            if(!confirm(`क्या आप इन ${selectedPhotoNames.length} तस्वीरों का सिलेक्शन मनोज जी को भेजना चाहते हैं?`)) return;
+
+            const btn = document.getElementById('submitSelectionBtn');
+            btn.innerText = "भेजा जा रहा है...";
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(WEB_APP_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        action: "submitSelection",
+                        clientCode: currentClientCode,
+                        clientName: currentClientName,
+                        selectedPhotos: selectedPhotoNames
+                    })
+                });
+                const result = await response.json();
+                if(result.status === "success") {
+                    alert("बधाई हो! " + result.message);
+                    window.location.reload();
+                }
+            } catch(err) {
+                alert("भेजने में कोई गड़बड़ हुई, कृपया दोबारा दबाएं।");
+            } finally {
+                btn.innerText = "मनोज जी को सिलेक्शन भेजें";
+                btn.disabled = false;
+            }
+        }
+
+        // 4. एंटी-डाउनलोड सिक्योरिटी इंजन (राइट क्लिक और लॉन्ग प्रेस लॉक)
+        function applyAntiDownload() {
+            const targets = document.querySelectorAll('.protect-img, .screenshot-overlay, .img-wrapper');
+            targets.forEach(el => {
+                el.addEventListener('contextmenu', e => e.preventDefault()); // राइट क्लिक बंद
+                el.addEventListener('dragstart', e => e.preventDefault());   // फोटो खींच कर ले जाना बंद
+            });
+        }
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
 </body>
 </html>
