@@ -191,3 +191,97 @@ body {
     width: 100%;
   }
 }
+/* PORTFOLIO SECTION STYLE */
+.portfolio-section {
+  padding: 100px 0;
+  background-color: #121926;    /* हेडर जैसा ही एक डार्क टोन शेड */
+  border-top: 1px solid #434b5117; /*[cite: 6] */
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-family: var(--ff-title);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--white);           /*[cite: 2, 7] */
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #a3afbf;                /* सिल्वर ग्रे टेक्स्ट[cite: 6] */
+}
+
+/* GALLERY GRID SETUP */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* कंप्यूटर पर 4 कॉलम दिखेंगे[cite: 6] */
+  gap: 20px;                     /* फोटो के बीच का गैप[cite: 6] */
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 8px;            /*[cite: 3, 6] */
+  overflow: hidden;              /*[cite: 3, 6] */
+  aspect-ratio: 1 / 1;           /* वर्गाकार (Square) फोटो बॉक्सेज़[cite: 2, 6] */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;                   /*[cite: 2, 6] */
+  height: 100%;                  /*[cite: 2, 6] */
+  object-fit: cover;             /* फोटो बॉक्स में पूरी तरह फिट बैठेगी[cite: 2, 6] */
+  transition: transform 0.5s ease; /*[cite: 6] */
+}
+
+/* HOVER EFFECT (माउस ले जाने पर होने वाला बदलाव) */
+.gallery-item:hover img {
+  transform: scale(1.1);         /* फोटो थोड़ी ज़ूम होगी[cite: 6] */
+}
+
+.gallery-overlay {
+  position: absolute;            /*[cite: 3, 6] */
+  inset: 0;                      /*[cite: 6] */
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); /*[cite: 6, 10] */
+  display: flex;                 /*[cite: 2, 6] */
+  align-items: flex-end;         /*[cite: 3, 6] */
+  padding: 20px;                 /*[cite: 2, 6] */
+  opacity: 0;                    /* सामान्य तौर पर टेक्स्ट छुपा रहेगा[cite: 6] */
+  transition: opacity 0.3s ease;  /*[cite: 3, 6] */
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;                    /* माउस ले जाने पर नाम दिखाई देगा */
+}
+
+.gallery-overlay h3 {
+  color: var(--theme-secondary); /* फोटो का नाम पीला/गोल्डन दिखेगा */
+  font-family: var(--ff-title);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* RESPONSIVE GALLERY (FOR MOBILE & TABLET) */
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* टैबलेट पर 2 कॉलम दिखेंगे[cite: 5, 6] */
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio-section {
+    padding: 60px 0;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* मोबाइल पर 1 कॉलम दिखेगा[cite: 6] */
+    gap: 15px;                   /*[cite: 6] */
+  }
+  .section-header h2 {
+    font-size: 28px;
+  }
+}
