@@ -4,47 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SARITA PHOTO - Professional Photography Studio</title>
-    <!-- कस्टमाइज्ड CSS फ़ाइल -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- मुख्य हेडर / नेविगेशन बार -->
     <header class="customHeader">
-        <div class="container d-flex justify-content-between align-items-center">
-            <!-- आपके स्टूडियो का लोगो / नाम -->
+        <div class="container header-flex">
             <div class="logo">
-                <span class="logo-text font-bold color-tertiary">SARITA PHOTO</span>
+                <span class="logo-text">SARITA PHOTO</span>
             </div>
             
-            <!-- मेनू लिंक्स -->
-            <nav class="for-pc d-flex gap-4">
-                <a href="#features" class="sub-menu color-primary text-decoration-none">फ़ीचर्स</a>
-                <a href="#portfolio" class="sub-menu color-primary text-decoration-none">पोर्टफोलियो</a>
-                <a href="#pricing" class="sub-menu color-primary text-decoration-none">प्राइसिंग</a>
-                <a href="#about" class="sub-menu color-primary text-decoration-none">हमारे बारे में</a>
+            <nav class="for-pc">
+                <a href="#hero" class="sub-menu">होम</a>
+                <a href="#features" class="sub-menu">फ़ीचर्स</a>
+                <a href="#portfolio" class="sub-menu">पोर्टफोलियो</a>
+                <a href="#about" class="sub-menu">हमारे बारे में</a>
             </nav>
 
-            <!-- लॉगिन/साइनअप बटन्स -->
-            <div class="d-flex gap-3">
-                <button class="iconed-button-alt pointer">लॉगिन</button>
-                <button class="secondaryButton pointer">साइनअप</button>
+            <div class="btn-group">
+                <button class="iconed-button-alt">लॉगिन</button>
+                <button class="secondaryButton">साइनअप</button>
             </div>
         </div>
     </header>
 
-    <!-- हीरो सेक्शन (Introduce Section) -->
-    <section class="introduce-section text-center" id="hero">
-        <div class="container flex-col align-items-center justify-center">
-            <div class="business-bordered-text mb-3">Welcome to Bikaner's Premium Studio</div>
+    <section class="introduce-section" id="hero">
+        <div class="container hero-container">
+            <div class="business-bordered-text">Welcome to Bikaner's Premium Studio</div>
             <h1>SARITA PHOTO</h1>
             <p class="owner-text">Owner: Manoj Kumar Panwar</p>
-            <p class="description max-w-md mx-auto">
+            <p class="description">
                 हम आपके जीवन के सबसे खूबसूरत और अनमोल पलों को अत्याधुनिक AI फेस रेकग्निशन टेक्नोलॉजी और प्रोफेशनल फोटोग्राफी के ज़रिए सहेजने में मदद करते हैं।
             </p>
-            <div class="button-group d-flex justify-center gap-3 mt-4">
-                <button class="secondaryButton pointer big-btn">गैलरी देखें</button>
-                <button class="iconed-button-alt pointer big-btn">संपर्क करें</button>
+            <div class="hero-btns">
+                <button class="secondaryButton big-btn">गैलरी देखें</button>
+                <button class="iconed-button-alt big-btn">संपर्क करें</button>
             </div>
         </div>
     </section>
