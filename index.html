@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarita Photo v2.0 | Premium Royal Edition</title>
+  <title>Sarita Photo v2.0 | Premium Royal Layout</title>
 
   <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS Link -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="no-select">
@@ -18,254 +17,178 @@
   <!-- GLASS HEADER -->
   <header class="customHeader">
     <div class="header-container">
-      <div class="logo-text">Sarita Photo</div>
+      <div class="logo-wrap">
+        <!-- आपका ओरिजिनल गोल्डन लोगो -->
+        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80" id="studioLogoImg" alt="Sarita Photo Logo">
+      </div>
       <nav class="nav-container">
         <ul class="nav-links">
           <li><a href="#home" class="sub-menu">Home</a></li>
-          <li><a href="#portfolio" class="sub-menu">Portfolio</a></li>
+          <li><a href="#services" class="sub-menu">Services</a></li>
           <li><a href="#selectionGallery" class="sub-menu">Selection Portal</a></li>
         </ul>
       </nav>
-      <button class="gallery-premium-btn" onclick="openLoginModal()">👑 क्लाइंट गैलरी लॉगिन</button>
+      <div class="header-right-btns">
+        <a href="tel:+919314711514" class="phone-link">📞 9314711514</a>
+        <button class="gallery-premium-btn" onclick="openLoginModal()">👤 Client Login</button>
+      </div>
     </div>
   </header>
 
-  <!-- LIVE COUNTER -->
+  <!-- STICKY SIDE SOCIAL BAR (LAYOUT STYLE) -->
+  <div class="sticky-side-bar">
+    <a href="tel:+919314711514" class="side-item phone"><span class="icon">📞</span><span class="lbl">Call Us</span></a>
+    <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20👋" target="_blank" class="side-item whatsapp"><span class="icon">💬</span><span class="lbl">WhatsApp</span></a>
+    <a href="#" class="side-item instagram"><span class="icon">📸</span><span class="lbl">Instagram</span></a>
+  </div>
+
+  <!-- LIVE SELECTION COUNTER BADGE -->
   <div class="live-counter-badge" id="liveCounterBadge">
     ❤️ Selected: <span id="selectedCount">0</span> Photos
   </div>
 
   <main>
-    <!-- HERO SECTION WITH HERO SLIDER BACKGROUND -->
+    <!-- HERO SECTION WITH PREMIUM BACKDROP -->
     <section id="home" class="introduce-section">
-      <!-- Background Slideshow Images -->
-      <div class="hero-slider">
-        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=1920');"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920');"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920');"></div>
-      </div>
       <div class="hero-overlay"></div>
       
       <div class="intro-content">
-        <div class="royal-badge">BIKANER'S ULTIMATE STUDIO</div>
-        <h1 id="welcomeClientTitle">Capturing Royal Timeless Moments</h1>
-        <p class="description" id="welcomeClientDesc">
-          A luxurious digital experience crafted for premium memory curation. Review your special days, select your favorites, and submit with a single click.
+        <div class="royal-badge">CAPTURING MOMENTS</div>
+        <h1>We Capture <br><span class="highlight-text">Your Best Moments</span></h1>
+        <p class="description">
+          Preserving emotions, love and memories through our premium wedding photography and film making. Review your special days, select your favorites, and submit instantly.
         </p>
-        <button class="gallery-premium-btn big-btn" onclick="openLoginModal()">📸 फोटो सिलेक्शन पोर्टल खोलें</button>
-        <p id="loadingStatusText" style="color: var(--theme-primary); font-weight: 600; font-size: 18px; margin-top: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.2);"></p>
+        <div class="hero-btns-flex">
+          <button class="gallery-premium-btn big-btn" onclick="openLoginModal()">📷 View Albums</button>
+          <a href="#services" class="iconed-button-alt big-btn" style="text-decoration:none; display:inline-flex; align-items:center;">✨ Our Services</a>
+        </div>
+
+        <!-- GLASS COUNTER DOCK (FROM IMAGE LAYOUT) -->
+        <div class="glass-counter-dock">
+          <div class="counter-box"><div class="c-icon">🏆</div><div class="c-txt"><h3>10+</h3><p>Years Experience</p></div></div>
+          <div class="counter-box"><div class="c-icon">📷</div><div class="c-txt"><h3>1500+</h3><p>Projects Completed</p></div></div>
+          <div class="counter-box"><div class="c-icon">👥</div><div class="c-txt"><h3>2500+</h3><p>Happy Clients</p></div></div>
+          <div class="counter-box"><div class="c-icon">💖</div><div class="c-txt"><h3>100%</h3><p>Client Satisfaction</p></div></div>
+        </div>
       </div>
     </section>
 
-    <!-- PUBLIC PORTFOLIO (बिना लॉगिन के सबको दिखेगा) -->
-    <section id="portfolio" class="portfolio-section">
+    <!-- SYMBOL WISE PREMIUM SERVICES SECTION -->
+    <section id="services" class="services-section">
       <div class="container">
-        <h2 class="section-title text-center">Our Masterpieces</h2>
-        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px; font-style: italic;">हमारे द्वारा संजोए गए कुछ शाही और यादगार पलों की झलकियाँ</p>
-        
-        <!-- कैटगरी टैब्स -->
-        <div class="category-tabs">
-          <button class="tab-btn active" onclick="filterPortfolio('all', event)">All Works</button>
-          <button class="tab-btn" onclick="filterPortfolio('wedding', event)">Wedding</button>
-          <button class="tab-btn" onclick="filterPortfolio('prewedding', event)">Pre-Wedding</button>
-          <button class="tab-btn" onclick="filterPortfolio('haldi', event)">Haldi/Mehendi</button>
-        </div>
+        <div class="section-badge mx-auto">OUR EXCELLENCE</div>
+        <h2 class="section-title text-center">Premium Services</h2>
+        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 50px;">हर खास पल को सिनेमैटिक और रॉयल अंदाज़ में संजोने के लिए हमारी विशेषज्ञ सेवाएँ:</p>
 
-        <!-- पोर्टफोलियो ग्रिड (सैंपल फोटोज़) -->
-        <div class="portfolio-grid" id="publicPortfolioGrid">
-          <div class="portfolio-card" data-cat="wedding">
-            <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600" alt="Wedding" class="protect-img"></div>
-            <h3>Royal Wedding Aesthetics</h3>
-          </div>
-          <div class="portfolio-card" data-cat="prewedding">
-            <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600" alt="Pre-Wedding" class="protect-img"></div>
-            <h3>Love in Bikaner Heritage</h3>
-          </div>
-          <div class="portfolio-card" data-cat="haldi">
-            <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600" alt="Haldi" class="protect-img"></div>
-            <h3>Traditional Vibrant Haldi</h3>
-          </div>
+        <div class="services-symbol-grid">
+          <div class="service-sym-card"><div class="sym-icon">👑</div><h3>Wedding Shoot</h3><p>शाही शादियों की बेमिसाल यादें।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">🧸</div><h3>Baby Shoot</h3><p>मासूम बचपन के चुलबुले पल।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">🌹</div><h3>Pre-Wedding Shoot</h3><p>विरासत और सिनेमाई वादियों में प्रेम कहानी।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">🎬</div><h3>Cinematic Video Shoot</h3><p>लार्ज-स्केल मूवी जैसी सिनेमैटोग्राफी।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">🎞️</div><h3>Wedding Reels</h3><p>सोशल मीडिया के लिए इंस्टाग्राम रील्स और शॉट्स।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">📸</div><h3>Candid Photo Shoot</h3><p>बिना बताए खींचे गए भावनामयी प्राकृतिक क्लिक्स।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">🎨</div><h3>Traditional Shoot</h3><p>संस्कृति और रीति-रिवाजों का खूबसूरत मेल।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">🛸</div><h3>Drone Shoot</h3><p>आसमान से भव्य एरियल और बर्ड्स-आई नज़ारे।</p></div>
+          <div class="service-sym-card"><div class="sym-icon">📡</div><h3>Live Telecast</h3><p>देश-विदेश में बैठे परिजनों के लिए फुल एचडी लाइव प्रसारण।</p></div>
         </div>
       </div>
     </section>
 
-    <!-- PREMIUM PHOTO SELECTION PORTAL (लॉगिन के बाद ही खुलेगा) -->
+    <!-- PREMIUM PHOTO SELECTION GALLEY -->
     <section id="selectionGallery" class="selection-section" style="display: none;">
       <div class="container">
         <h2 class="section-title text-center" id="clientGalleryTitle">आपकी डिजिटल गैलरी</h2>
-        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px;">तस्वीर को बड़ी स्क्रीन पर देखने के लिए उस पर क्लिक करें। पसंदीदा फोटो चुनने के लिए हार्ट (❤️) आइकॉन दबाएं।</p>
-        
-        <!-- डायनेमिक गैलरी ग्रिड -->
+        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px;">पसंदीदा फोटो चुनने के लिए हार्ट (❤️) आइकॉन दबाएं। चुनी हुई फोटो पर गोल्डन बॉर्डर आ जाएगी।</p>
         <div class="gallery-grid" id="premiumGallery"></div>
 
-        <!-- LUXURY SUBMIT BOX -->
         <div id="selection" class="submit-selection-box text-center">
           <h3 class="section-title">Ready with your selection?</h3>
-          <p style="color:var(--text-secondary); margin-bottom: 25px;">कृपया अपनी चुनी हुई तस्वीरों की अच्छी तरह समीक्षा कर लें। बटन दबाते ही आपकी लिस्ट मनोज जी के पास सेव हो जाएगी।</p>
-          <button class="gallery-premium-btn big-btn" id="submitBtn" onclick="submitSelectionToBackend()">मनोज जी को टैलेंटेड सिलेक्शन भेजें ⚡</button>
+          <p style="color:var(--text-secondary); margin-bottom: 25px;">लिस्ट सबमिट करते ही आपका कोड लॉक हो जाएगा और मनोज जी को चुनी हुई तस्वीरें मिल जाएँगी।</p>
+          <button class="gallery-premium-btn big-btn" id="submitBtn" onclick="submitSelectionToBackend()">मनोज जी को सिलेक्शन भेजें ⚡</button>
         </div>
-      </div>
-    </section>
-
-    <!-- PREMIUM BOOKING SECTION -->
-    <section class="booking-section">
-      <div class="container text-center">
-        <h2 class="section-title" style="color: #fff;">📅 Book Your Next Royal Event</h2>
-        <p style="color: #ebd168; max-width: 600px; margin: 0 auto 30px; font-size: 16px;">क्या आप भी अपनी शादी या किसी खास समारोह को सिनेमैटिक लुक देना चाहते हैं? आज ही अपनी तारीख बुक करें।</p>
-        <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20👋%20I%20want%20to%20book%20an%20event%20with%20your%20studio." target="_blank" class="gallery-premium-btn big-btn" style="background: var(--theme-secondary); color: #000; font-weight: 700;">📅 Book Your Event Now</a>
       </div>
     </section>
   </main>
 
-  <!-- PREMIUM CLIENT LOGIN MODAL -->
+  <!-- CLIENT LOGIN MODAL -->
   <div class="popup-overlay" id="loginModal">
     <div class="popup-box">
-      <div class="royal-badge" style="margin-bottom: 15px;">SECURE PORTAL</div>
-      <h3>क्लाइंट फोटो सिलेक्शन</h3>
-      <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">मनोज जी द्वारा दिया गया अपना नाम और कोड यहाँ दर्ज करें:</p>
-      
+      <div class="royal-badge" style="margin-bottom: 15px;">SECURE ACCESS</div>
+      <h3>क्लाइंट गैलरी लॉगिन</h3>
+      <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">अपना नाम और कोड डालकर गैलरी अनलॉक करें:</p>
       <input type="text" id="clientNameInput" placeholder="अपना नाम (जैसे: Alok Kumar)" autocomplete="off">
       <input type="text" id="clientCodeInput" placeholder="गैलरी कोड (जैसे: ALOK50)" autocomplete="off">
-      
       <div style="display: flex; gap: 12px; margin-top: 10px;">
-        <button class="gallery-premium-btn" onclick="closeLoginModal()" style="background: var(--text-secondary); color: #fff; flex: 1;">बंद करें</button>
+        <button class="gallery-premium-btn" onclick="closeLoginModal()" style="background: var(--text-secondary); border:none; color: #fff; flex: 1;">बंद करें</button>
         <button class="gallery-premium-btn" id="loginSubmitBtn" onclick="checkClientCode()" style="flex: 2;">गैलरी खोलें ✨</button>
       </div>
     </div>
   </div>
 
-  <!-- WELCOME GUIDE POPUP -->
-  <div class="popup-overlay" id="welcomeGuidePopup">
-    <div class="popup-box" style="max-width: 500px;">
-      <h3>Welcome to Your Digital Gallery</h3>
-      <div class="divider"></div>
-      <p style="margin-bottom: 12px; text-align: left;"><strong>Step 1:</strong> नीचे दी गई गैलरी में अपनी सभी तस्वीरें सीरीज़ वाइज़ देखें।</p>
-      <p style="margin-bottom: 12px; text-align: left;"><strong>Step 2:</strong> फोटो को पसंद करने के लिए उसके कोने में बने हार्ट आइकॉन (❤️) पर क्लिक करें।</p>
-      <p style="margin-bottom: 12px; text-align: left;"><strong>Step 3:</strong> सिलेक्टेड फोटो पर <b>गोल्डन बॉर्डर</b> और टिक मार्क आ जाएगा। कुल संख्या नीचे काउंटर पर दिखेगी।</p>
-      <p style="margin-bottom: 25px; text-align: left;"><strong>Step 4:</strong> काम पूरा होने पर सबसे नीचे जाकर "मनोज जी को सिलेक्शन भेजें" पर क्लिक कर दें।</p>
-      <button class="gallery-premium-btn" style="width:100%; padding: 12px;" onclick="closeWelcomeGuide()">गैलरी में प्रवेश करें 👑</button>
-    </div>
-  </div>
-
-  <!-- LIGHTBOX WITH NEXT/BACK CONTROLS -->
+  <!-- LIGHTBOX CONTROL -->
   <div class="lightbox" id="lightbox">
     <span class="close-lightbox" onclick="closeLightbox()">×</span>
     <button class="lightbox-arrow arrow-left" onclick="changeLightboxImage(-1)">◀</button>
     <div class="lightbox-content">
-      <img id="lightboxImg" src="" alt="Full Screen View" class="protect-img">
+      <img id="lightboxImg" src="" alt="Full Screen" class="protect-img">
       <div id="lightboxImgName" class="lightbox-img-name"></div>
     </div>
     <button class="lightbox-arrow arrow-right" onclick="changeLightboxImage(1)">▶</button>
   </div>
 
-  <!-- ROYAL CHAT ASSISTED FLOATING BUBBLE -->
-  <div class="whatsapp-bubble-wrapper">
-    <div class="chat-help-text">Need Help? Chat Now</div>
-    <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20I%20need%20help%20regarding%20Premium%20Photo%20Selection." class="royal-whatsapp-btn" target="_blank">
-      💬 Chat Now
-    </a>
-  </div>
+  <!-- FLOATING WHATSAPP ASSIST BUBBLE -->
+  <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20I%20need%20help%20regarding%20Photo%20Selection." class="floating-whatsapp-trigger" target="_blank">
+    💬 Need Help? Chat Now
+  </a>
 
   <!-- LUXURY FOOTER -->
   <footer class="luxury-footer">
     <div class="container text-center">
-      <div class="logo-text" style="font-size: 42px;">Sarita Photo</div>
+      <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80" class="footer-logo-img" alt="Sarita Photo">
       <p>&copy; 2026 Sarita Photo v2.0 — Premium Edition. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- CORE CODE ENGINE JS -->
+  <!-- JAVASCRIPT LOGIC ENGINE -->
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZqtbLaEC611pbaQv4DS1yBsAW276A98ylv0KWv4xauaE7cf3IGcXHvUbmudePZoGkVA/exec";
-    let selectedPhotos = [];
-    let allLoadedPhotos = [];
-    let currentLightboxIndex = 0;
-    let currentClientCode = "";
-    let currentClientName = "";
-
-    // Hero Background Slider Logic
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-slider .slide');
-    setInterval(() => {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }, 5000);
+    let selectedPhotos = []; let allLoadedPhotos = []; let currentLightboxIndex = 0; let currentClientCode = ""; let currentClientName = "";
 
     function openLoginModal() { document.getElementById('loginModal').classList.add('active'); }
     function closeLoginModal() { document.getElementById('loginModal').classList.remove('active'); }
-    function openWelcomeGuide() { document.getElementById('welcomeGuidePopup').classList.add('active'); }
-    function closeWelcomeGuide() { document.getElementById('welcomeGuidePopup').classList.remove('active'); }
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
 
-    // Public Portfolio Filter Logic
-    function filterPortfolio(category, event) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      document.querySelectorAll('.portfolio-card').forEach(card => {
-        card.style.display = (category === 'all' || card.getAttribute('data-cat') === category) ? 'block' : 'none';
-      });
-    }
-
-    // Secure Login Engine
     async function checkClientCode() {
       const nameInput = document.getElementById('clientNameInput').value.trim();
       const codeInput = document.getElementById('clientCodeInput').value.trim();
-      
-      if(!nameInput || !codeInput) { alert("कृपया अपना नाम और गैलरी कोड दोनों दर्ज करें!"); return; }
+      if(!nameInput || !codeInput) { alert("कृपया विवरण दर्ज करें!"); return; }
       
       const btn = document.getElementById('loginSubmitBtn');
-      btn.innerText = "शाही तिजोरी खुल रही है...";
-      btn.disabled = true;
+      btn.innerText = "सुरक्षित कनेक्शन बन रहा है..."; btn.disabled = true;
 
       try {
-        const response = await fetch(SCRIPT_URL, {
-          method: "POST",
-          body: JSON.stringify({ action: "login", clientCode: codeInput })
-        });
+        const response = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify({ action: "login", clientCode: codeInput }) });
         const result = await response.json();
-
         if (result.status === "success") {
-          currentClientCode = codeInput;
-          currentClientName = result.clientName;
-          allLoadedPhotos = result.photos;
-
-          document.getElementById('welcomeClientTitle').innerText = "Welcome, " + currentClientName;
-          document.getElementById('welcomeClientDesc').innerText = "सरिता फोटो स्टूडियो द्वारा संजोए गए आपके जीवन के स्वर्णिम पल नीचे गैलरी में प्रस्तुत कर दिए गए हैं।";
-          
+          currentClientCode = codeInput; currentClientName = result.clientName; allLoadedPhotos = result.photos;
           document.getElementById('clientGalleryTitle').innerText = "शाही गैलरी: " + currentClientName;
           renderGallery(result.photos);
-          
           closeLoginModal();
           document.getElementById('selectionGallery').style.display = "block";
           document.getElementById('selectionGallery').scrollIntoView({ behavior: 'smooth' });
-          
-          setTimeout(() => { openWelcomeGuide(); }, 800);
-        } else {
-          alert(result.message);
-        }
-      } catch (err) {
-        alert("सर्वर से संपर्क नहीं हो पाया। कृपया दोबारा प्रयास करें।");
-      } finally {
-        btn.innerText = "गैलरी खोलें ✨";
-        btn.disabled = false;
-      }
+        } else { alert(result.message); }
+      } catch (err) { alert("सर्वर कनेक्शन त्रुटि।"); }
+      finally { btn.innerText = "गैलरी खोलें ✨"; btn.disabled = false; }
     }
 
-    // Render Drive Images with Premium Heart Logic
     function renderGallery(photos) {
-      const gallery = document.getElementById('premiumGallery');
-      gallery.innerHTML = "";
-
-      if (photos.length === 0) {
-        gallery.innerHTML = "<p style='grid-column:1/-1; text-align:center; color:var(--text-secondary);'>इस फ़ोल्डर में कोई फोटो नहीं मिलीं।</p>";
-        return;
-      }
+      const gallery = document.getElementById('premiumGallery'); gallery.innerHTML = "";
+      if (photos.length === 0) { gallery.innerHTML = "<p>कोई फोटो नहीं मिलीं।</p>"; return; }
 
       photos.forEach((photo, index) => {
         const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w800`;
         const card = document.createElement('div');
-        card.className = "gallery-card";
-        card.id = `card_${photo.id}`;
+        card.className = "gallery-card"; card.id = `card_${photo.id}`;
         card.innerHTML = `
           <div class="gallery-img-wrapper">
             <img src="${imgUrl}" alt="${photo.name}" class="protect-img" loading="lazy" onclick="openLightbox(${index})">
@@ -280,77 +203,32 @@
       applyAntiDownload();
     }
 
-    // Heart Toggle and Gold Border Logic
     function toggleHeartSelect(btnElement, photoId, photoName) {
       btnElement.classList.toggle('selected');
-      const cardElement = document.getElementById(`card_${photoId}`);
-      cardElement.classList.toggle('gold-selected-card');
-
-      if (selectedPhotos.includes(photoName)) {
-        selectedPhotos = selectedPhotos.filter(name => name !== photoName);
-      } else {
-        selectedPhotos.push(photoName);
-      }
+      document.getElementById(`card_${photoId}`).classList.toggle('gold-selected-card');
+      if (selectedPhotos.includes(photoName)) { selectedPhotos = selectedPhotos.filter(name => name !== photoName); }
+      else { selectedPhotos.push(photoName); }
       document.getElementById('selectedCount').innerText = selectedPhotos.length;
     }
 
-    // Lightbox Controls
-    function openLightbox(index) {
-      currentLightboxIndex = index;
-      showLightboxImage();
-      document.getElementById('lightbox').classList.add('active');
-    }
+    function openLightbox(index) { currentLightboxIndex = index; showLightboxImage(); document.getElementById('lightbox').classList.add('active'); }
+    function showLightboxImage() { const photo = allLoadedPhotos[currentLightboxIndex]; document.getElementById('lightboxImg').src = `https://lh3.googleusercontent.com/d/${photo.id}=w1200`; document.getElementById('lightboxImgName').innerText = photo.name; }
+    function changeLightboxImage(direction) { currentLightboxIndex += direction; if (currentLightboxIndex >= allLoadedPhotos.length) currentLightboxIndex = 0; if (currentLightboxIndex < 0) currentLightboxIndex = allLoadedPhotos.length - 1; showLightboxImage(); }
 
-    function showLightboxImage() {
-      const photo = allLoadedPhotos[currentLightboxIndex];
-      document.getElementById('lightboxImg').src = `https://lh3.googleusercontent.com/d/${photo.id}=w1200`;
-      document.getElementById('lightboxImgName').innerText = photo.name;
-    }
-
-    function changeLightboxImage(direction) {
-      currentLightboxIndex += direction;
-      if (currentLightboxIndex >= allLoadedPhotos.length) currentLightboxIndex = 0;
-      if (currentLightboxIndex < 0) currentLightboxIndex = allLoadedPhotos.length - 1;
-      showLightboxImage();
-    }
-
-    function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
-
-    // Backend Submission Logic
     async function submitSelectionToBackend() {
-      if (selectedPhotos.length === 0) { alert("कृपया सबमिट करने से पहले कम से कम एक फोटो पर ❤️ दबाकर उसे चुनें!"); return; }
-      if (!confirm(`क्या आप अपनी चुनी हुई इन ${selectedPhotos.length} शानदार तस्वीरों को फाइनल लॉक करके मनोज जी को भेजना चाहते हैं?`)) return;
-
-      const btn = document.getElementById('submitBtn');
-      btn.innerText = "तिजोरी में डेटा सेव हो रहा है...";
-      btn.disabled = true;
-
+      if (selectedPhotos.length === 0) { alert("कृपया तस्वीरें चुनें!"); return; }
+      if (!confirm(`क्या आप इन ${selectedPhotos.length} तस्वीरों का लॉक सबमिट करना चाहते हैं?`)) return;
+      const btn = document.getElementById('submitBtn'); btn.innerText = "भेजा जा रहा है..."; btn.disabled = true;
       try {
-        const response = await fetch(SCRIPT_URL, {
-          method: "POST",
-          body: JSON.stringify({
-            action: "submitSelection",
-            photos: selectedPhotos,
-            clientCode: currentClientCode,
-            clientName: currentClientName
-          })
-        });
+        const response = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify({ action: "submitSelection", photos: selectedPhotos, clientCode: currentClientCode, clientName: currentClientName }) });
         const data = await response.json();
-        if (data.status === "success") {
-          alert("✅ बधाई हो! आपका प्रीमियम सिलेक्शन मनोज जी के पास सुरक्षित पहुंच गया है।");
-          window.location.reload();
-        }
-      } catch (err) {
-        alert("⚠️ नेटवर्क गड़बड़ के कारण सबमिट नहीं हो पाया।");
-      } finally {
-        btn.innerText = "मनोज जी को टैलेंटेड सिलेक्शन भेजें ⚡";
-        btn.disabled = false;
-      }
+        if (data.status === "success") { alert("✅ सिलेक्शन सुरक्षित मनोज जी को भेज दिया गया है!"); window.location.reload(); }
+      } catch (err) { alert("त्रुटि आई।"); }
+      finally { btn.innerText = "मनोज जी को सिलेक्शन भेजें ⚡"; btn.disabled = false; }
     }
 
-    // Anti-Download Security Shield
     function applyAntiDownload() {
-      document.querySelectorAll('.protect-img, .screenshot-overlay, .gallery-img-wrapper, .portfolio-img-wrap').forEach(el => {
+      document.querySelectorAll('.protect-img, .screenshot-overlay, .gallery-img-wrapper').forEach(el => {
         el.addEventListener('contextmenu', e => e.preventDefault());
         el.addEventListener('dragstart', e => e.preventDefault());
       });
