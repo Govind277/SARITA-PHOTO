@@ -1,193 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarita Photo v2.0 | Premium Edition</title>
-    
-    <!-- Premium Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarita Photo v2.0 | Premium Edition</title>
+
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. GLASS HEADER -->
-    <header class="customHeader">
-        <div class="header-container">
-            <div class="logo-text">Sarita Photo</div>
-            <nav class="nav-container">
-                <ul class="nav-links">
-                    <li><a href="#home" class="sub-menu">Home</a></li>
-                    <li><a href="#portfolio" class="sub-menu">Portfolio</a></li>
-                    <li><a href="#selection" class="sub-menu">Photo Selection</a></li>
-                </ul>
-            </nav>
-            <button class="gallery-premium-btn" onclick="openWelcomeGuide()">Welcome Guide</button>
-        </div>
-    </header>
-
-    <!-- LIVE COUNTER STICKER (For Photo Selection) -->
-    <div class="live-counter-badge" id="liveCounterBadge">
-        ❤️ Selected: <span id="selectedCount">0</span>
+  <!-- HEADER -->
+  <header class="customHeader">
+    <div class="header-container">
+      <div class="logo-text">Sarita Photo</div>
+      <nav class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#home" class="sub-menu">Home</a></li>
+          <li><a href="#portfolio" class="sub-menu">Portfolio</a></li>
+          <li><a href="#selection" class="sub-menu">Photo Selection</a></li>
+        </ul>
+      </nav>
+      <button class="gallery-premium-btn" onclick="openWelcomeGuide()" aria-label="Open Welcome Guide">Welcome Guide</button>
     </div>
+  </header>
 
-    <main>
-        <!-- 2. FULL SCREEN HERO SLIDER / SECTION -->
-        <section id="home" class="introduce-section">
-            <div class="intro-content">
-                <h1>Capturing Royal Timeless Moments</h1>
-                <p class="description">
-                    A luxurious digital experience crafted for premium memory curation. Review your special days, select your favorites, and submit with a single click.
-                </p>
-                <a href="#portfolio" class="gallery-premium-btn" style="display:inline-flex; align-items:center; text-decoration:none; margin-top:25px;">
-                    Explore Categories
-                </a>
-            </div>
-        </section>
+  <!-- LIVE COUNTER -->
+  <div class="live-counter-badge" id="liveCounterBadge">
+    ❤️ Selected: <span id="selectedCount">0</span>
+  </div>
 
-        <!-- 3. PORTFOLIO CATEGORIES -->
-        <section id="portfolio" class="portfolio-section">
-            <div class="container">
-                <h2 class="section-title text-center">Our Masterpieces</h2>
-                <div class="category-tabs">
-                    <button class="tab-btn active" onclick="filterGallery('all')">All</button>
-                    <button class="tab-btn" onclick="filterGallery('wedding')">Wedding</button>
-                    <button class="tab-btn" onclick="filterGallery('prewedding')">Pre-Wedding</button>
-                    <button class="tab-btn" onclick="filterGallery('haldi')">Haldi</button>
-                    <button class="tab-btn" onclick="filterGallery('mehendi')">Mehendi</button>
-                    <button class="tab-btn" onclick="filterGallery('album')">Album</button>
-                    <button class="tab-btn" onclick="filterGallery('video')">Video</button>
-                </div>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="introduce-section">
+      <div class="intro-content">
+        <h1>Capturing Royal Timeless Moments</h1>
+        <p class="description">
+          A luxurious digital experience crafted for premium memory curation. Review your special days, select your favorites, and submit with a single click.
+        </p>
+        <a href="#portfolio" class="gallery-premium-btn" style="margin-top:25px;" aria-label="Explore Categories">
+          Explore Categories
+        </a>
+      </div>
+    </section>
 
-                <!-- BETTER GALLERY LAYOUT -->
-                <div class="gallery-grid" id="premiumGallery">
-                    <!-- Sample Item 1 (Wedding) -->
-                    <div class="gallery-card" data-category="wedding">
-                        <div class="gallery-img-wrapper">
-                            <div class="placeholder-img">Wedding Memory</div>
-                            <button class="heart-select-btn" onclick="toggleSelectPhoto(this, 'IMG_001')">❤️</button>
-                        </div>
-                        <div class="card-details">
-                            <h3>Royal Wedding Essence</h3>
-                        </div>
-                    </div>
-                    <!-- Sample Item 2 (Prewedding) -->
-                    <div class="gallery-card" data-category="prewedding">
-                        <div class="gallery-img-wrapper">
-                            <div class="placeholder-img">Pre-Wedding Shoot</div>
-                            <button class="heart-select-btn" onclick="toggleSelectPhoto(this, 'IMG_002')">❤️</button>
-                        </div>
-                        <div class="card-details">
-                            <h3>Love in Heritage</h3>
-                        </div>
-                    </div>
-                    <!-- Sample Item 3 (Haldi) -->
-                    <div class="gallery-card" data-category="haldi">
-                        <div class="gallery-img-wrapper">
-                            <div class="placeholder-img">Haldi Vibrations</div>
-                            <button class="heart-select-btn" onclick="toggleSelectPhoto(this, 'IMG_003')">❤️</button>
-                        </div>
-                        <div class="card-details">
-                            <h3>Golden Festive Joy</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BETTER SUBMIT SCREEN INTERFACE -->
-                <div id="selection" class="submit-selection-box text-center">
-                    <h3 class="section-title" style="font-size:28px; margin-bottom:15px;">Ready with your selection?</h3>
-                    <p style="color:var(--text-secondary); margin-bottom:20px;">Review your choices and send them directly to our production server via Google Apps Script.</p>
-                    <button class="gallery-premium-btn" onclick="submitSelectionToBackend()">Submit Selected Photos</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 4. WELCOME GUIDE POPUP -->
-    <div class="popup-overlay" id="welcomeGuidePopup">
-        <div class="popup-box">
-            <h3>Welcome to Sarita Photo Selection</h3>
-            <div class="divider"></div>
-            <p><strong>Step 1:</strong> Explore your curated categories using the top tabs.</p>
-            <p><strong>Step 2:</strong> Tap on the heart icon (❤️) on your favorite images to add them to your selection list.</p>
-            <p><strong>Step 3:</strong> Review your selected number on the live floating tracker on your screen.</p>
-            <p><strong>Step 4:</strong> Once satisfied, scroll to the bottom and click "Submit Selected Photos".</p>
-            <button class="gallery-premium-btn" style="margin-top:20px; width:100%;" onclick="closeWelcomeGuide()">Let's Start</button>
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <h2 class="section-title text-center">Our Masterpieces</h2>
+        <div class="category-tabs">
+          <button class="tab-btn active" onclick="filterGallery('all', event)">All</button>
+          <button class="tab-btn" onclick="filterGallery('wedding', event)">Wedding</button>
+          <button class="tab-btn" onclick="filterGallery('prewedding', event)">Pre-Wedding</button>
+          <button class="tab-btn" onclick="filterGallery('haldi', event)">Haldi</button>
         </div>
+
+        <div class="gallery-grid" id="premiumGallery">
+          <div class="gallery-card" data-category="wedding">
+            <div class="gallery-img-wrapper">
+              <img src="wedding.jpg" alt="Wedding Memory" loading="lazy">
+              <button class="heart-select-btn" onclick="toggleSelectPhoto(this, 'IMG_001')" aria-label="Select Wedding Photo">❤️</button>
+            </div>
+            <h3>Royal Wedding Essence</h3>
+          </div>
+
+          <div class="gallery-card" data-category="prewedding">
+            <div class="gallery-img-wrapper">
+              <img src="prewedding.jpg" alt="Pre-Wedding Shoot" loading="lazy">
+              <button class="heart-select-btn" onclick="toggleSelectPhoto(this, 'IMG_002')" aria-label="Select Pre-Wedding Photo">❤️</button>
+            </div>
+            <h3>Love in Heritage</h3>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div id="selection" class="submit-selection-box text-center">
+          <h3 class="section-title">Ready with your selection?</h3>
+          <p style="color:var(--text-secondary);">Review your choices and send them directly to our production server via Google Apps Script.</p>
+          <button class="gallery-premium-btn" onclick="submitSelectionToBackend()" aria-label="Submit Selected Photos">Submit Selected Photos</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- POPUP -->
+  <div class="popup-overlay" id="welcomeGuidePopup">
+    <div class="popup-box">
+      <h3>Welcome to Sarita Photo Selection</h3>
+      <div class="divider"></div>
+      <p><strong>Step 1:</strong> Explore categories using the top tabs.</p>
+      <p><strong>Step 2:</strong> Tap on the heart icon (❤️) to add favorites.</p>
+      <p><strong>Step 3:</strong> Review your selected number on the live tracker.</p>
+      <p><strong>Step 4:</strong> Scroll down and click "Submit Selected Photos".</p>
+      <button class="gallery-premium-btn" style="margin-top:20px; width:100%;" onclick="closeWelcomeGuide()">Let's Start</button>
     </div>
+  </div>
 
-    <!-- 5. FLOATING WHATSAPP CHAT -->
-    <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Sarita%20Photo,%20I%20want%20to%20inquire%20about%20a%20premium%20booking." class="whatsapp-floating-btn" target="_blank">
-        💬 Chat Now
-    </a>
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Sarita%20Photo,%20I%20want%20to%20inquire%20about%20a%20premium%20booking." class="whatsapp-floating-btn" target="_blank" aria-label="Chat on WhatsApp">
+    💬 Chat Now
+  </a>
 
-    <!-- LUXURY FOOTER -->
-    <footer class="luxury-footer">
-        <div class="container text-center">
-            <div class="logo-text" style="font-size: 36px; margin-bottom: 10px;">Sarita Photo</div>
-            <p>&copy; 2026 Sarita Photo v2.0 — Premium Edition. All Rights Reserved.</p>
-        </div>
-    </footer>
+  <!-- FOOTER -->
+  <footer class="luxury-footer">
+    <div class="container text-center">
+      <div class="logo-text">Sarita Photo</div>
+      <p>&copy; 2026 Sarita Photo v2.0 — Premium Edition. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    <!-- JS Core Logic Integration For Your Existing Backend Scripts -->
-    <script>
-        let selectedPhotos = [];
+  <!-- JS -->
+  <script>
+    let selectedPhotos = [];
 
-        // Auto Open Welcome Guide on Load
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => { openWelcomeGuide(); }, 1000);
-        });
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => { openWelcomeGuide(); }, 1000);
+    });
 
-        function openWelcomeGuide() {
-            document.getElementById('welcomeGuidePopup').classList.add('active');
-        }
+    function openWelcomeGuide() {
+      document.getElementById('welcomeGuidePopup').classList.add('active');
+    }
 
-        function closeWelcomeGuide() {
-            document.getElementById('welcomeGuidePopup').classList.remove('active');
-        }
+    function closeWelcomeGuide() {
+      document.getElementById('welcomeGuidePopup').classList.remove('active');
+    }
 
-        // Heart Selection System
-        function toggleSelectPhoto(btnElement, photoID) {
-            btnElement.classList.toggle('selected');
-            if(selectedPhotos.includes(photoID)) {
-                selectedPhotos = selectedPhotos.filter(id => id !== photoID);
-            } else {
-                selectedPhotos.push(photoID);
-            }
-            document.getElementById('selectedCount').innerText = selectedPhotos.length;
-        }
+    function toggleSelectPhoto(btnElement, photoID) {
+      btnElement.classList.toggle('selected');
+      if(selectedPhotos.includes(photoID)) {
+        selectedPhotos = selectedPhotos.filter(id => id !== photoID);
+      } else {
+        selectedPhotos.push(photoID);
+      }
+      document.getElementById('selectedCount').innerText = selectedPhotos.length;
+    }
 
-        // Dynamic Portfolio Filter
-        function filterGallery(category) {
-            const cards = document.querySelectorAll('.gallery-card');
-            const tabs = document.querySelectorAll('.tab-btn');
-            
-            // Toggle active class for tabs
-            tabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
+    function filterGallery(category, event) {
+      const cards = document.querySelectorAll('.gallery-card');
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
 
-            cards.forEach(card => {
-                if(category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+      cards.forEach(card => {
+        card.style.display = (category === 'all' || card.getAttribute('data-category') === category) ? 'block' : 'none';
+      });
+    }
 
-        // Connects directly to your existing Google Apps Script infrastructure
-        function submitSelectionToBackend() {
-            if(selectedPhotos.length === 0) {
-                alert("Please select at least one photo before submitting.");
-                return;
-            }
-            alert(`Perfect! Submitting ${selectedPhotos.length} photos. Processing with your existing Google Apps Script.`);
-            // Dynamic payload injection logic for your current Login state goes here...
-        }
-    </script>
+    function submitSelectionToBackend() {
+      if(selectedPhotos.length === 0) {
+        alert("Please select at least one photo before submitting.");
+        return;
+      }
+      alert(`Perfect! Submitting ${selectedPhotos.length} photos. Processing with your existing Google Apps Script.`);
+    }
+  </script>
 </body>
 </html>
