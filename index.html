@@ -1,129 +1,206 @@
-:root {
-  --theme-primary: #ff3333;
-  --theme-secondary: #ffd86b;
-  --bg-primary: #121926;
-  --bg-card: #1a2436;
-  --white: #ffffff;
-  --text-primary: #ffffff;
-  --ff-title: "Plus Jakarta Sans", sans-serif;
-  --ff-body: "Inter", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARITA PHOTO - Professional Digital Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-select">
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--ff-body); background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.5; }
+    <!-- Main Header -->
+    <header class="customHeader">
+        <div class="container header-flex">
+            <div class="logo">
+                <span class="logo-text">SARITA PHOTO</span>
+            </div>
+            <nav class="for-pc">
+                <a href="#hero" class="sub-menu">होम</a>
+                <a href="#portfolio" class="sub-menu">हमारा काम (पोर्टफोलियो)</a>
+                <a href="#features" class="sub-menu">फ़ीचर्स</a>
+                <a href="#booking" class="sub-menu">बुक करें</a>
+            </nav>
+            <div class="btn-group">
+                <button class="gallery-premium-btn pointer" onclick="openLoginModal()">📸 क्लाइंट गैलरी (फोटो सिलेक्शन)</button>
+            </div>
+        </div>
+    </header>
 
-.no-select {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    <!-- Hero Section -->
+    <section class="introduce-section" id="hero">
+        <div class="container hero-container">
+            <div class="business-bordered-text">Bikaner's Ultimate Premium Studio</div>
+            <h1>SARITA PHOTO</h1>
+            <p class="owner-text">Owner: Manoj Kumar Panwar</p>
+            <p class="description">
+                अत्याधुनिक AI फेस रेकग्निशन टेक्नोलॉजी, कस्टमाइज्ड डिजिटल मोनोग्राम डिज़ाइन्स और हाई-एंड वेडिंग फोटोग्राफी का एकमात्र स्थान।
+            </p>
+            <div class="hero-btns">
+                <button class="gallery-premium-btn big-btn" onclick="openLoginModal()">📸 फोटो सिलेक्शन पोर्टल खोलें</button>
+                <a href="#portfolio" class="iconed-button-alt big-btn" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">📂 हमारा काम देखें</a>
+            </div>
+        </div>
+    </section>
 
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="business-bordered-text mx-auto">OUR WORK MASTERCLASS</div>
+                <h2>सरिता फोटो पोर्टफोलियो</h2>
+                <p class="section-subtitle" style="color: #a3afbf; margin-bottom: 30px;">हमारे द्वारा किए गए कुछ बेहतरीन कार्यों की झलकियाँ यहाँ देखें।</p>
+                
+                <div class="tab-container">
+                    <button class="tab-btn active" onclick="switchTab('tab-photos')">📸 बेस्ट फोटोज़</button>
+                    <button class="tab-btn" onclick="switchTab('tab-sheets')">🎨 एल्बम शीट्स</button>
+                    <button class="tab-btn" onclick="switchTab('tab-videos')">🎥 वीडियो टीज़र्स</button>
+                </div>
+            </div>
 
-/* HEADER PREMIUM BUTTON */
-.customHeader { width: 100%; height: 80px; display: flex; align-items: center; background-color: #0c1017; box-shadow: 0px 4px 15px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 1000; }
-.header-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.logo-text { font-family: var(--ff-title); font-size: 26px; font-weight: 800; color: var(--theme-secondary); letter-spacing: 1px; }
-.for-pc { display: flex; gap: 35px; }
-.sub-menu { font-weight: 600; font-size: 16px; color: #cdd5e2; text-decoration: none; transition: color 0.2s; }
-.sub-menu:hover { color: var(--theme-secondary); }
+            <div id="tab-photos" class="tab-content active">
+                <div class="portfolio-grid">
+                    <div class="portfolio-item"><img src="https://lh3.googleusercontent.com/d/1wR6768w77w878" alt="Wedding Photo" class="protect-img"></div>
+                </div>
+            </div>
 
-/* नया अलग गैलरी बटन */
-.gallery-premium-btn { height: 46px; padding: 0 1.5rem; border-radius: 30px; background: linear-gradient(135deg, #ff3333 0%, #b82525 100%); color: #fff; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(255,51,51,0.3); transition: transform 0.2s; }
-.gallery-premium-btn:hover { transform: scale(1.03); }
+            <div id="tab-sheets" class="tab-content">
+                <div class="portfolio-grid sheets-grid">
+                    <div class="portfolio-item sheet-item"><img src="https://lh3.googleusercontent.com/d/1wR6768w77w878" alt="Album Sheet 1" class="protect-img"></div>
+                </div>
+            </div>
 
-/* HERO SECTION */
-.introduce-section { padding: 140px 0; min-height: 75vh; display: flex; align-items: center; background: radial-gradient(circle at center, #1a2436 0%, #121926 100%); }
-.hero-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.business-bordered-text { border: 1px solid var(--theme-secondary); border-radius: 20px; padding: 6px 18px; font-size: 13px; font-weight: 700; color: var(--theme-secondary); text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px; }
-.introduce-section h1 { font-family: var(--ff-title); font-size: 64px; font-weight: 800; color: var(--theme-secondary); }
-.owner-text { font-size: 26px; font-weight: 700; color: var(--theme-primary); margin-bottom: 30px; }
-.description { font-size: 18px; color: #a3afbf; max-width: 700px; margin: 0 auto 40px; }
-.hero-btns { display: flex; gap: 20px; }
+            <div id="tab-videos" class="tab-content">
+                <div class="video-grid">
+                    <div class="video-wrapper">
+                        <iframe src="https://drive.google.com/video/layout?id=1wR6768w77w878" width="100%" height="350" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* SELECTION WORKING ZONE (Series Wise) */
-.selection-section { padding: 90px 0; background-color: #0b0f17; border-top: 3px solid var(--theme-secondary); }
-.selection-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 25px; margin-top: 40px; margin-bottom: 120px; }
-.select-item { background-color: var(--bg-card); border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+    <!-- SELECTION PORTAL -->
+    <section class="selection-section" id="selectionGallery" style="display: none;">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="business-bordered-text mx-auto" id="clientWelcomeName">क्लाइंट गैलरी</div>
+                <h2>अपनी तस्वीरें सिलेक्ट करें</h2>
+            </div>
+            <div class="selection-grid" id="photosGrid"></div>
+            <div class="submit-bar">
+                <div class="counter-text"><span id="selectedCount">0</span> फोटोज़ चुनी गईं</div>
+                <button class="secondaryButton big-btn" id="submitSelectionBtn" onclick="submitMySelection()">मनोज जी को सिलेक्शन भेजें</button>
+            </div>
+        </div>
+    </section>
 
-.img-wrapper { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; cursor: zoom-in; background-color: #0c1017; }
-.img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-.img-wrapper:hover img { transform: scale(1.06); }
-.screenshot-overlay { position: absolute; inset: 0; background: transparent; z-index: 5; }
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="business-bordered-text mx-auto">हमारी विशेषताएँ</div>
+                <h2>आधुनिक डिजिटल स्टूडियो फ़ीचर्स</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card"><div class="feature-icon">📸</div><h3>प्रोफेशनल फोटोग्राफी</h3><p>शादी-ब्याह और ट्रेडिशनल इवेंट्स के लिए बीकानेर रीजन की सर्वश्रेष्ठ सेवाएँ।</p></div>
+                <div class="feature-card"><div class="feature-icon">🤖</div><h3>AI फेस रिकग्निशन</h3><p>अत्याधुनिक AI तकनीक, जिससे मेहमान केवल एक सेल्फी से अपनी तस्वीरें ढूंढ सकते हैं।</p></div>
+                <div class="feature-card"><div class="feature-icon">🎨</div><h3>डिजिटल स्टूडियो डिज़ाइन्स</h3><p>कस्टमाइज्ड डिजिटल मोनोग्राम और इनविटेशन कार्ड्स की बेहतरीन डिजाइनिंग।</p></div>
+                <div class="feature-card"><div class="feature-icon">⚡</div><h3>सुपरफास्ट डिलीवरी</h3><p>डिजिटल क्लाउड के ज़रिए आपकी सभी तस्वीरों की सुरक्षित और तुरंत डिलीवरी।</p></div>
+            </div>
+        </div>
+    </section>
 
-.select-checkbox-zone { padding: 15px; display: flex; align-items: center; justify-content: center; gap: 12px; background-color: #0c1017; }
-.select-checkbox-zone input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: var(--theme-secondary); }
-.select-checkbox-zone label { font-size: 16px; font-weight: 600; color: #ffffff; cursor: pointer; }
+    <!-- Booking Section -->
+    <section class="booking-section" id="booking">
+        <div class="container text-center">
+            <div class="business-bordered-text mx-auto">बुक करें</div>
+            <h2>क्या आप अपना इवेंट बुक करना चाहते हैं?</h2>
+            <p class="section-subtitle">सीधे हमसे WhatsApp पर बात करें।</p>
+            <div class="mt-4">
+                <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO" target="_blank" class="secondaryButton pointer big-btn whatsapp-btn">💬 Query for Booking (WhatsApp)</a>
+            </div>
+        </div>
+    </section>
 
-/* BOTTOM DOCK BAR */
-.submit-bar { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background-color: #0c1017; padding: 18px 45px; border-radius: 50px; display: flex; align-items: center; gap: 35px; box-shadow: 0 10px 40px rgba(0,0,0,0.7); border: 2px solid var(--theme-secondary); z-index: 999; }
-.counter-text { font-size: 19px; font-weight: 700; }
-.counter-text span { color: var(--theme-secondary); font-size: 24px; }
+    <!-- LOGIN MODAL -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-box">
+            <div class="modal-badge">SECURITY PORTAL</div>
+            <h3>क्लाइंट फोटो सिलेक्शन लॉगिन</h3>
+            <input type="text" id="clientNameInput" placeholder="अपना नाम" autocomplete="off">
+            <input type="text" id="clientCodeInput" placeholder="क्लाइंट कोड" autocomplete="off">
+            <div class="modal-btns">
+                <button class="iconed-button-alt" onclick="closeLoginModal()">बंद करें</button>
+                <button class="secondaryButton" id="loginSubmitBtn" onclick="checkClientCode()">गैलरी लोड करें ⚡</button>
+            </div>
+        </div>
+    </div>
 
-/* PREMIUM TWO-FIELD MODAL BOX */
-.modal-overlay { position: fixed; inset: 0; background-color: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 2000; }
-.modal-overlay.active { opacity: 1; pointer-events: auto; }
-.modal-box { background-color: var(--bg-card); padding: 45px; border-radius: 16px; border: 1px solid var(--theme-secondary); width: 100%; max-width: 480px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.6); position: relative; }
-.modal-badge { background-color: var(--theme-primary); color: #fff; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 15px; letter-spacing: 1px; }
-.modal-box h3 { font-family: var(--ff-title); font-size: 26px; color: var(--theme-secondary); margin-bottom: 8px; }
-.modal-box input { width: 100%; height: 48px; background-color: #0c1017; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0 18px; color: #fff; font-size: 16px; margin-bottom: 18px; transition: border-color 0.2s; }
-.modal-box input:focus { border-color: var(--theme-secondary); outline: none; }
-.modal-btns { display: flex; gap: 15px; justify-content: center; margin-top: 10px; }
+    <!-- LIGHTBOX VIEW -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">×</span>
+        <button class="lightbox-arrow arrow-left" onclick="changeLightboxImage(-1)">◀</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Full Screen View" class="protect-img">
+            <div id="lightboxImgName" class="lightbox-img-name"></div>
+        </div>
+        <button class="lightbox-arrow arrow-right" onclick="changeLightboxImage(1)">▶</button>
+    </div>
 
-/* ADVANCED LIGHTBOX VIEW WITH NEXT/BACK */
-.lightbox { position: fixed; inset: 0; background-color: rgba(0,0,0,0.97); display: flex; align-items: center; justify-content: space-between; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 3000; padding: 0 40px; }
-.lightbox.active { opacity: 1; pointer-events: auto; }
-.lightbox-content { display: flex; flex-direction: column; align-items: center; max-width: 75%; }
-.lightbox img { max-height: 80vh; max-width: 100%; object-fit: contain; border-radius: 6px; box-shadow: 0 0 30px rgba(0,0,0,0.9); }
-.lightbox-img-name { color: #a3afbf; font-size: 16px; margin-top: 15px; font-weight: 500; letter-spacing: 0.5px; }
-.close-lightbox { position: absolute; top: 25px; right: 35px; color: #fff; font-size: 50px; font-weight: 200; cursor: pointer; transition: color 0.2s; }
-.close-lightbox:hover { color: var(--theme-primary); }
-
-/* नेक्स्ट/बैक तीर बटन्स */
-.lightbox-arrow { background: rgba(26, 36, 54, 0.6); color: #ffffff; border: 1px solid rgba(255,255,255,0.1); width: 60px; height: 60px; border-radius: 50%; font-size: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 3100; }
-.lightbox-arrow:hover { background: var(--theme-secondary); color: #000; border-color: var(--theme-secondary); transform: scale(1.1); }
-
-/* EXTRA UI CARD SECTIONS */
-.features-section { padding: 100px 0; }
-.features-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 25px; }
-.feature-card { background-color: var(--bg-card); padding: 40px 25px; border-radius: 10px; text-align: center; border: 1px solid rgba(255,255,255,0.03); }
-.feature-icon { font-size: 42px; margin-bottom: 20px; }
-.feature-card h3 { font-size: 22px; color: #fff; margin-bottom: 12px; font-family: var(--ff-title); }
-.feature-card p { font-size: 15px; color: #a3afbf; }
-.booking-section { padding: 100px 0; background-color: #0c1017; }
-
-/* COMPONENT BUTTONS */
-.secondaryButton { height: 46px; padding: 0 2rem; border-radius: 30px; background: linear-gradient(90deg, #b89235, #ebd168); color: #121926; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(235,209,104,0.2); }
-.iconed-button-alt { height: 46px; padding: 0 2rem; border-radius: 30px; background-color: transparent; border: 2px solid var(--theme-secondary); color: var(--theme-secondary); font-weight: 700; cursor: pointer; }
-.big-btn { height: 52px; padding: 0 2.5rem; font-size: 16px; }
-.whatsapp-btn { background: #1eab1b !important; color: #fff !important; font-size: 18px !important; box-shadow: 0 4px 15px rgba(30,171,27,0.3) !important; text-decoration: none; border: none !important; }
-.text-center { text-align: center; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.mt-4 { margin-top: 25px; }
-.pointer { cursor: pointer; }
-
-/* MOBILE RESPONSIVE MEDIA ENGINE */
-@media (max-width: 1024px) {
-  .selection-grid, .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .lightbox { padding: 0 20px; }
-  .lightbox-arrow { width: 50px; height: 50px; font-size: 18px; }
-}
-@media (max-width: 768px) {
-  .for-pc { display: none; }
-  .introduce-section h1 { font-size: 44px; }
-  .hero-btns { flex-direction: column; width: 100%; }
-  .submit-bar { width: 92%; padding: 15px 25px; gap: 15px; justify-content: space-between; }
-  .counter-text { font-size: 16px; }
-  .lightbox img { max-height: 65vh; }
-}
-@media (max-width: 500px) {
-  .selection-grid, .features-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-  .lightbox-arrow { position: absolute; bottom: 30px; }
-  .arrow-left { left: 40px; }
-  .arrow-right { right: 40px; }
-  .lightbox-content { max-width: 100%; }
-}
-
-@media print { body { display: none !important; } }
+    <script>
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxZqtbLaEC611pbaQv4DS1yBsAW276A98ylv0KWv4xauaE7cf3IGcXHvUbmudePZoGkVA/exec";
+        let currentClientCode = ""; let currentClientName = ""; let allLoadedPhotos = []; let selectedPhotoNames = []; let currentLightboxIndex = 0;
+        function openLoginModal() { document.getElementById('loginModal').classList.add('active'); }
+        function closeLoginModal() { document.getElementById('loginModal').classList.remove('active'); }
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        async function checkClientCode() {
+            const nameInput = document.getElementById('clientNameInput').value.trim();
+            const codeInput = document.getElementById('clientCodeInput').value.trim();
+            if(!nameInput || !codeInput) { alert("कृपया अपना नाम और कोड डालें!"); return; }
+            const btn = document.getElementById('loginSubmitBtn'); btn.innerText = "चेक हो रहा है..."; btn.disabled = true;
+            try {
+                const response = await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify({ action: "login", clientCode: codeInput }) });
+                const result = await response.json();
+                if(result.status === "success") {
+                    currentClientCode = codeInput; currentClientName = result.clientName; allLoadedPhotos = result.photos;
+                    document.getElementById('clientWelcomeName').innerText = "स्वागत है, " + currentClientName;
+                    renderPhotos(result.photos); document.getElementById('selectionGallery').style.display = "block";
+                    closeLoginModal(); document.getElementById('selectionGallery').scrollIntoView({ behavior: 'smooth' });
+                } else { alert(result.message); }
+            } catch(err) { alert("सर्वर एरर।"); } finally { btn.innerText = "गैलरी लोड करें ⚡"; btn.disabled = false; }
+        }
+        function renderPhotos(photos) {
+            const grid = document.getElementById('photosGrid'); grid.innerHTML = ""; selectedPhotoNames = []; updateCounter();
+            if(photos.length === 0) { grid.innerHTML = "<p>कोई तस्वीरें नहीं मिलीं।</p>"; return; }
+            photos.forEach((photo, index) => {
+                const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w800`;
+                const item = document.createElement('div'); item.className = "select-item";
+                item.innerHTML = `<div class="img-wrapper" onclick="openLightbox(${index})"><img src="${imgUrl}" class="protect-img" loading="lazy"><div class="screenshot-overlay"></div></div><div class="select-checkbox-zone"><input type="checkbox" id="check_${photo.id}" value="${photo.name}" onchange="toggleSelectPhoto(this)"><label for="check_${photo.id}">सिलेक्ट करें</label></div>`;
+                grid.appendChild(item);
+            });
+            applyAntiDownload();
+        }
+        function toggleSelectPhoto(cb) { if(cb.checked) { selectedPhotoNames.push(cb.value); } else { selectedPhotoNames = selectedPhotoNames.filter(name => name !== cb.value); } updateCounter(); }
+        function updateCounter() { document.getElementById('selectedCount').innerText = selectedPhotoNames.length; }
+        function openLightbox(index) { currentLightboxIndex = index; showLightboxImage(); document.getElementById('lightbox').classList.add('active'); }
+        function showLightboxImage() { const photo = allLoadedPhotos[currentLightboxIndex]; document.getElementById('lightboxImg').src = `https://lh3.googleusercontent.com/d/${photo.id}=w1200`; document.getElementById('lightboxImgName').innerText = photo.name; }
+        function changeLightboxImage(direction) { currentLightboxIndex += direction; if(currentLightboxIndex >= allLoadedPhotos.length) currentLightboxIndex = 0; if(currentLightboxIndex < 0) currentLightboxIndex = allLoadedPhotos.length - 1; showLightboxImage(); }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+        async function submitMySelection() {
+            if(selectedPhotoNames.length === 0) { alert("फोटो सिलेक्ट करें!"); return; }
+            const btn = document.getElementById('submitSelectionBtn'); btn.innerText = "भेजा जा रहा है..."; btn.disabled = true;
+            try {
+                const response = await fetch(WEB_APP_URL, { method: 'POST', body: JSON.stringify({ action: "submitSelection", clientCode: currentClientCode, clientName: currentClientName, selectedPhotos: selectedPhotoNames }) });
+                const result = await response.json(); if(result.status === "success") { alert(result.message); window.location.reload(); }
+            } catch(err) { alert("त्रुटि आई।"); } finally { btn.innerText = "मनोज जी को सिलेक्शन भेजें"; btn.disabled = false; }
+        }
+        function applyAntiDownload() { document.querySelectorAll('.protect-img, .screenshot-overlay, .img-wrapper').forEach(el => { el.addEventListener('contextmenu', e => e.preventDefault()); el.addEventListener('dragstart', e => e.preventDefault()); }); }
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+</body>
+</html>
