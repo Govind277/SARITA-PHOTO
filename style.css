@@ -33,14 +33,14 @@ body { font-family: var(--ff-body); background: var(--bg-primary); color: var(--
 
 /* PERFECT MATCH HOOK HERO SECTION USING THE IMAGE DIRECTLY */
 .master-hero-layout {
+  .master-hero-layout {
   position: relative;
   width: 100%;
-  aspect-ratio: 1920 / 1025; /* आपकी ओरिजिनल इमेज का आस्पेक्ट रेशियो */
-  background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=1920'); /* गिटहब पर अपलोड होते ही इसे 'hero.jpg.png' से रिप्लेस कर सकते हैं */
+  aspect-ratio: 1920 / 1025;
+  background-image: url('hero.jpg.png');
   background-size: cover;
   background-position: center;
 }
-.interactive-click-layer { position: absolute; inset: 0; z-index: 10; display: flex; align-items: center; }
 
 /* बटन प्लेसमेंट जो इमेज के बटन्स के बिल्कुल ऊपर बैठेंगे */
 .action-placement-box { position: absolute; top: 57%; left: 5%; display: flex; gap: 22px; }
