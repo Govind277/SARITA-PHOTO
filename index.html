@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarita Photo v2.0 | Premium Royal Layout</title>
+  <title>Sarita Photo v2.0 | Full Layout Edition</title>
 
   <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,129 +14,112 @@
 </head>
 <body class="no-select">
 
-  <!-- GLASS HEADER -->
+  <!-- TRANSPARENT GLASS HEADER -->
   <header class="customHeader">
     <div class="header-container">
-      <div class="logo-wrap">
-        <!-- आपका ओरिजिनल गोल्डन लोगो -->
-        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80" id="studioLogoImg" alt="Sarita Photo Logo">
-      </div>
+      <div class="logo-placeholder-invisible"></div> <!-- लोगो इमेज के ऊपर खाली जगह -->
       <nav class="nav-container">
         <ul class="nav-links">
           <li><a href="#home" class="sub-menu">Home</a></li>
+          <li><a href="#about" class="sub-menu">About Us</a></li>
           <li><a href="#services" class="sub-menu">Services</a></li>
-          <li><a href="#selectionGallery" class="sub-menu">Selection Portal</a></li>
+          <li><a href="#selectionGallery" class="sub-menu">Gallery</a></li>
         </ul>
       </nav>
       <div class="header-right-btns">
-        <a href="tel:+919314711514" class="phone-link">📞 9314711514</a>
-        <button class="gallery-premium-btn" onclick="openLoginModal()">👤 Client Login</button>
+        <a href="tel:+919314711514" class="phone-display-btn">📞 9314711514</a>
+        <button class="client-login-trigger" onclick="openLoginModal()">👤 Client Login</button>
       </div>
     </div>
   </header>
 
-  <!-- STICKY SIDE SOCIAL BAR (LAYOUT STYLE) -->
-  <div class="sticky-side-bar">
-    <a href="tel:+919314711514" class="side-item phone"><span class="icon">📞</span><span class="lbl">Call Us</span></a>
-    <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20👋" target="_blank" class="side-item whatsapp"><span class="icon">💬</span><span class="lbl">WhatsApp</span></a>
-    <a href="#" class="side-item instagram"><span class="icon">📸</span><span class="lbl">Instagram</span></a>
+  <!-- STICKY RIGHT ACTIONS -->
+  <div class="sticky-right-action-panel">
+    <a href="tel:+919314711514" class="action-btn-item"><span class="a-icon">📞</span><span class="a-lbl">Call Us</span></a>
+    <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20👋" target="_blank" class="action-btn-item"><span class="a-icon">💬</span><span class="a-lbl">WhatsApp</span></a>
+    <a href="#" class="action-btn-item"><span class="a-icon">📸</span><span class="a-lbl">Instagram</span></a>
   </div>
 
-  <!-- LIVE SELECTION COUNTER BADGE -->
+  <!-- LIVE PHOTO COUNTER -->
   <div class="live-counter-badge" id="liveCounterBadge">
     ❤️ Selected: <span id="selectedCount">0</span> Photos
   </div>
 
   <main>
-    <!-- HERO SECTION WITH PREMIUM BACKDROP -->
-    <section id="home" class="introduce-section">
-      <div class="hero-overlay"></div>
-      
-      <div class="intro-content">
-        <div class="royal-badge">CAPTURING MOMENTS</div>
-        <h1>We Capture <br><span class="highlight-text">Your Best Moments</span></h1>
-        <p class="description">
-          Preserving emotions, love and memories through our premium wedding photography and film making. Review your special days, select your favorites, and submit instantly.
-        </p>
-        <div class="hero-btns-flex">
-          <button class="gallery-premium-btn big-btn" onclick="openLoginModal()">📷 View Albums</button>
-          <a href="#services" class="iconed-button-alt big-btn" style="text-decoration:none; display:inline-flex; align-items:center;">✨ Our Services</a>
-        </div>
-
-        <!-- GLASS COUNTER DOCK (FROM IMAGE LAYOUT) -->
-        <div class="glass-counter-dock">
-          <div class="counter-box"><div class="c-icon">🏆</div><div class="c-txt"><h3>10+</h3><p>Years Experience</p></div></div>
-          <div class="counter-box"><div class="c-icon">📷</div><div class="c-txt"><h3>1500+</h3><p>Projects Completed</p></div></div>
-          <div class="counter-box"><div class="c-icon">👥</div><div class="c-txt"><h3>2500+</h3><p>Happy Clients</p></div></div>
-          <div class="counter-box"><div class="c-icon">💖</div><div class="c-txt"><h3>100%</h3><p>Client Satisfaction</p></div></div>
+    <!-- HERO SECTION MAPS DIRECTLY TO YOUR IMAGE LAYOUT -->
+    <section id="home" class="master-hero-layout">
+      <div class="interactive-click-layer">
+        <!-- लाइव बटन्स जो इमेज के बटन्स के ऊपर बिल्कुल सटीक बैठेंगे -->
+        <div class="action-placement-box">
+          <button class="invisible-overlay-btn" onclick="openLoginModal()" title="View Albums"></button>
+          <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO,%20I%20want%20to%20watch%20showreel." target="_blank" class="invisible-overlay-btn btn-showreel" title="Watch Showreel"></a>
         </div>
       </div>
     </section>
 
-    <!-- SYMBOL WISE PREMIUM SERVICES SECTION -->
-    <section id="services" class="services-section">
+    <!-- SYMBOL WISE SERVICES ARCHITECTURE -->
+    <section id="services" class="services-symbol-section">
       <div class="container">
-        <div class="section-badge mx-auto">OUR EXCELLENCE</div>
-        <h2 class="section-title text-center">Premium Services</h2>
-        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 50px;">हर खास पल को सिनेमैटिक और रॉयल अंदाज़ में संजोने के लिए हमारी विशेषज्ञ सेवाएँ:</p>
+        <h2 class="premium-section-title text-center">Our Specializations</h2>
+        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 50px; font-size: 15px;">सिंबल-वाइज़ प्रीमियम प्रेजेंटेशन</p>
 
         <div class="services-symbol-grid">
-          <div class="service-sym-card"><div class="sym-icon">👑</div><h3>Wedding Shoot</h3><p>शाही शादियों की बेमिसाल यादें।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">🧸</div><h3>Baby Shoot</h3><p>मासूम बचपन के चुलबुले पल।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">🌹</div><h3>Pre-Wedding Shoot</h3><p>विरासत और सिनेमाई वादियों में प्रेम कहानी।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">🎬</div><h3>Cinematic Video Shoot</h3><p>लार्ज-स्केल मूवी जैसी सिनेमैटोग्राफी।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">🎞️</div><h3>Wedding Reels</h3><p>सोशल मीडिया के लिए इंस्टाग्राम रील्स और शॉट्स।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">📸</div><h3>Candid Photo Shoot</h3><p>बिना बताए खींचे गए भावनामयी प्राकृतिक क्लिक्स।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">🎨</div><h3>Traditional Shoot</h3><p>संस्कृति और रीति-रिवाजों का खूबसूरत मेल।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">🛸</div><h3>Drone Shoot</h3><p>आसमान से भव्य एरियल और बर्ड्स-आई नज़ारे।</p></div>
-          <div class="service-sym-card"><div class="sym-icon">📡</div><h3>Live Telecast</h3><p>देश-विदेश में बैठे परिजनों के लिए फुल एचडी लाइव प्रसारण।</p></div>
+          <div class="sym-card"><div class="s-icon">👑</div><h3>Wedding Shoot</h3><p>शाही शादियों की यादगार कवरेज</p></div>
+          <div class="sym-card"><div class="s-icon">🧸</div><h3>Baby Shoot</h3><p>मासूम बचपन के हँसते हुए पल</p></div>
+          <div class="sym-card"><div class="s-icon">🌹</div><h3>Pre-Wedding Shoot</h3><p>सिनेमाई अंदाज़ में आपकी लव स्टोरी</p></div>
+          <div class="sym-card"><div class="s-icon">🎬</div><h3>Cinematic Videoshoot</h3><p>हाई-एंड मूवी स्टाइल वीडियो</p></div>
+          <div class="sym-card"><div class="s-icon">🎞️</div><h3>Wedding Reels</h3><p>ट्रेंडिंग इंस्टाग्राम वीडियो और कट्स</p></div>
+          <div class="sym-card"><div class="s-icon">📸</div><h3>Candid Photoshoot</h3><p>प्राकृतिक हाव-भाव वाले अनमोल क्लिक्स</p></div>
+          <div class="sym-card"><div class="s-icon">🎨</div><h3>Traditional Shoot</h3><p>रीति-रिवाज और सांस्कृतिक यादें</p></div>
+          <div class="sym-card"><div class="s-icon">🛸</div><h3>Drone Shoot</h3><p>भव्य और शानदार एरियल शॉट्स</p></div>
+          <div class="sym-card"><div class="s-icon">📡</div><h3>Live Telecast</h3><p>फुल एचडी ऑनलाइन लाइव स्ट्रीमिंग</p></div>
         </div>
       </div>
     </section>
 
-    <!-- PREMIUM PHOTO SELECTION GALLEY -->
-    <section id="selectionGallery" class="selection-section" style="display: none;">
+    <!-- CLIENT DYNAMIC SELECTION PORTAL -->
+    <section id="selectionGallery" class="secure-selection-section" style="display: none;">
       <div class="container">
-        <h2 class="section-title text-center" id="clientGalleryTitle">आपकी डिजिटल गैलरी</h2>
-        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px;">पसंदीदा फोटो चुनने के लिए हार्ट (❤️) आइकॉन दबाएं। चुनी हुई फोटो पर गोल्डन बॉर्डर आ जाएगी।</p>
+        <h2 class="premium-section-title text-center" id="clientGalleryTitle">आपकी डिजिटल तिजोरी</h2>
+        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px;">फोटो सिलेक्ट करने के लिए हार्ट (❤️) दबाएं। चुनी हुई तस्वीरों पर सुनहरी बॉर्डर आ जाएगी।</p>
+        
         <div class="gallery-grid" id="premiumGallery"></div>
 
         <div id="selection" class="submit-selection-box text-center">
-          <h3 class="section-title">Ready with your selection?</h3>
-          <p style="color:var(--text-secondary); margin-bottom: 25px;">लिस्ट सबमिट करते ही आपका कोड लॉक हो जाएगा और मनोज जी को चुनी हुई तस्वीरें मिल जाएँगी।</p>
-          <button class="gallery-premium-btn big-btn" id="submitBtn" onclick="submitSelectionToBackend()">मनोज जी को सिलेक्शन भेजें ⚡</button>
+          <h3 class="premium-section-title" style="font-size: 28px;">Ready with your selection?</h3>
+          <button class="submit-royal-btn" id="submitBtn" onclick="submitSelectionToBackend()">मनोज जी को सिलेक्शन भेजें ⚡</button>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- CLIENT LOGIN MODAL -->
+  <!-- CLIENT SECURE LOGIN POPUP -->
   <div class="popup-overlay" id="loginModal">
     <div class="popup-box">
-      <div class="royal-badge" style="margin-bottom: 15px;">SECURE ACCESS</div>
+      <div class="royal-badge">SECURE ENCRYPTION</div>
       <h3>क्लाइंट गैलरी लॉगिन</h3>
-      <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">अपना नाम और कोड डालकर गैलरी अनलॉक करें:</p>
+      <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">अपना नाम और कोड डालकर गैलरी को लाइव लोड करें:</p>
       <input type="text" id="clientNameInput" placeholder="अपना नाम (जैसे: Alok Kumar)" autocomplete="off">
       <input type="text" id="clientCodeInput" placeholder="गैलरी कोड (जैसे: ALOK50)" autocomplete="off">
       <div style="display: flex; gap: 12px; margin-top: 10px;">
-        <button class="gallery-premium-btn" onclick="closeLoginModal()" style="background: var(--text-secondary); border:none; color: #fff; flex: 1;">बंद करें</button>
-        <button class="gallery-premium-btn" id="loginSubmitBtn" onclick="checkClientCode()" style="flex: 2;">गैलरी खोलें ✨</button>
+        <button class="close-modal-btn" onclick="closeLoginModal()">बंद करें</button>
+        <button class="submit-royal-btn" id="loginSubmitBtn" onclick="checkClientCode()">गैलरी खोलें ✨</button>
       </div>
     </div>
   </div>
 
-  <!-- LIGHTBOX CONTROL -->
+  <!-- LIGHTBOX SLIDER VIEW -->
   <div class="lightbox" id="lightbox">
     <span class="close-lightbox" onclick="closeLightbox()">×</span>
     <button class="lightbox-arrow arrow-left" onclick="changeLightboxImage(-1)">◀</button>
     <div class="lightbox-content">
-      <img id="lightboxImg" src="" alt="Full Screen" class="protect-img">
+      <img id="lightboxImg" src="" alt="Full Screen View" class="protect-img">
       <div id="lightboxImgName" class="lightbox-img-name"></div>
     </div>
     <button class="lightbox-arrow arrow-right" onclick="changeLightboxImage(1)">▶</button>
   </div>
 
-  <!-- FLOATING WHATSAPP ASSIST BUBBLE -->
+  <!-- CORNER HELP TRIGGER -->
   <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20I%20need%20help%20regarding%20Photo%20Selection." class="floating-whatsapp-trigger" target="_blank">
     💬 Need Help? Chat Now
   </a>
@@ -144,12 +127,11 @@
   <!-- LUXURY FOOTER -->
   <footer class="luxury-footer">
     <div class="container text-center">
-      <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80" class="footer-logo-img" alt="Sarita Photo">
-      <p>&copy; 2026 Sarita Photo v2.0 — Premium Edition. All Rights Reserved.</p>
+      <p>&copy; 2026 Sarita Photo v2.0 — Premium Layout Edition. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC ENGINE -->
+  <!-- CORE CODE LOGIC ENGINE -->
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZqtbLaEC611pbaQv4DS1yBsAW276A98ylv0KWv4xauaE7cf3IGcXHvUbmudePZoGkVA/exec";
     let selectedPhotos = []; let allLoadedPhotos = []; let currentLightboxIndex = 0; let currentClientCode = ""; let currentClientName = "";
@@ -161,10 +143,10 @@
     async function checkClientCode() {
       const nameInput = document.getElementById('clientNameInput').value.trim();
       const codeInput = document.getElementById('clientCodeInput').value.trim();
-      if(!nameInput || !codeInput) { alert("कृपया विवरण दर्ज करें!"); return; }
+      if(!nameInput || !codeInput) { alert("कृपया नाम और कोड भरें!"); return; }
       
       const btn = document.getElementById('loginSubmitBtn');
-      btn.innerText = "सुरक्षित कनेक्शन बन रहा है..."; btn.disabled = true;
+      btn.innerText = "सुरक्षित लॉगिन हो रहा है..."; btn.disabled = true;
 
       try {
         const response = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify({ action: "login", clientCode: codeInput }) });
@@ -177,13 +159,13 @@
           document.getElementById('selectionGallery').style.display = "block";
           document.getElementById('selectionGallery').scrollIntoView({ behavior: 'smooth' });
         } else { alert(result.message); }
-      } catch (err) { alert("सर्वर कनेक्शन त्रुटि।"); }
+      } catch (err) { alert("कनेक्शन त्रुटि। दोबारा प्रयास करें।"); }
       finally { btn.innerText = "गैलरी खोलें ✨"; btn.disabled = false; }
     }
 
     function renderGallery(photos) {
       const gallery = document.getElementById('premiumGallery'); gallery.innerHTML = "";
-      if (photos.length === 0) { gallery.innerHTML = "<p>कोई फोटो नहीं मिलीं।</p>"; return; }
+      if (photos.length === 0) { gallery.innerHTML = "<p>कोई तस्वीरें नहीं मिलीं।</p>"; return; }
 
       photos.forEach((photo, index) => {
         const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w800`;
@@ -216,13 +198,13 @@
     function changeLightboxImage(direction) { currentLightboxIndex += direction; if (currentLightboxIndex >= allLoadedPhotos.length) currentLightboxIndex = 0; if (currentLightboxIndex < 0) currentLightboxIndex = allLoadedPhotos.length - 1; showLightboxImage(); }
 
     async function submitSelectionToBackend() {
-      if (selectedPhotos.length === 0) { alert("कृपया तस्वीरें चुनें!"); return; }
-      if (!confirm(`क्या आप इन ${selectedPhotos.length} तस्वीरों का लॉक सबमिट करना चाहते हैं?`)) return;
-      const btn = document.getElementById('submitBtn'); btn.innerText = "भेजा जा रहा है..."; btn.disabled = true;
+      if (selectedPhotos.length === 0) { alert("कृपया तस्वीरें सिलेक्ट करें!"); return; }
+      if (!confirm(`क्या आप अपनी चुनी हुई ${selectedPhotos.length} तस्वीरें लॉक करना चाहते हैं?`)) return;
+      const btn = document.getElementById('submitBtn'); btn.innerText = "सेव हो रहा है..."; btn.disabled = true;
       try {
         const response = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify({ action: "submitSelection", photos: selectedPhotos, clientCode: currentClientCode, clientName: currentClientName }) });
         const data = await response.json();
-        if (data.status === "success") { alert("✅ सिलेक्शन सुरक्षित मनोज जी को भेज दिया गया है!"); window.location.reload(); }
+        if (data.status === "success") { alert("✅ सिलेक्शन सफलतापूर्वक मनोज जी के पास पहुंच गया है!"); window.location.reload(); }
       } catch (err) { alert("त्रुटि आई।"); }
       finally { btn.innerText = "मनोज जी को सिलेक्शन भेजें ⚡"; btn.disabled = false; }
     }
