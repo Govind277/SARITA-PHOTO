@@ -9,4 +9,7 @@
   --ff-title: 'Cinzel', serif;
   --ff-logo: 'Great Vibes', cursive;
   --ff-body: 'Poppins', sans-serif;
-  --shadow-premium: 0
+  --shadow-premium: 0 20px 40px rgba(201, 162, 39, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box;
