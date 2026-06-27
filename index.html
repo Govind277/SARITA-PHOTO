@@ -156,7 +156,28 @@
         alert("Please select at least one photo before submitting.");
         return;
       }
-      alert(`Perfect! Submitting ${selectedPhotos.length} photos. Processing with your existing Google Apps Script.`);
+
+      // Tumhara live Google Apps Script Web App URL
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxZqtbLaEC611pbaQv4DS1yBsAW276A98ylv0KWv4xauaE7cf3IGcXHvUbmudePZoGkVA/exec";
+
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify({
+          photos: selectedPhotos,
+          clientCode: "ALOK50",   // yahan dynamic client code aayega
+          clientName: "Alok Wedding Bikaner" // yahan client name aayega
+        }),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.status === "success") {
+          alert("✅ Selection submitted successfully!");
+        } else {
+          alert("❌ Error: " + data.message);
+        }
+      })
+      .catch(err => alert("⚠️ Network error: " + err));
     }
   </script>
 </body>
