@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarita Photo v2.0 | Full Layout Edition</title>
+  <title>Sarita Photo v2.5 | Ultimate Interactive Edition</title>
 
   <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +17,13 @@
   <!-- TRANSPARENT GLASS HEADER -->
   <header class="customHeader">
     <div class="header-container">
-      <div class="logo-placeholder-invisible"></div> <!-- लोगो इमेज के ऊपर खाली जगह -->
+      <div class="logo-placeholder-invisible"></div>
       <nav class="nav-container">
         <ul class="nav-links">
           <li><a href="#home" class="sub-menu">Home</a></li>
-          <li><a href="#about" class="sub-menu">About Us</a></li>
           <li><a href="#services" class="sub-menu">Services</a></li>
-          <li><a href="#selectionGallery" class="sub-menu">Gallery</a></li>
+          <li><a href="#digitalHub" class="sub-menu">E-Album & Reels</a></li>
+          <li><a href="#selectionGallery" class="sub-menu">Gallery Portal</a></li>
         </ul>
       </nav>
       <div class="header-right-btns">
@@ -37,7 +37,7 @@
   <div class="sticky-right-action-panel">
     <a href="tel:+919314711514" class="action-btn-item"><span class="a-icon">📞</span><span class="a-lbl">Call Us</span></a>
     <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20👋" target="_blank" class="action-btn-item"><span class="a-icon">💬</span><span class="a-lbl">WhatsApp</span></a>
-    <a href="#" class="action-btn-item"><span class="a-icon">📸</span><span class="a-lbl">Instagram</span></a>
+    <a href="https://www.instagram.com/panwar3695/" target="_blank" class="action-btn-item"><span class="a-icon">📸</span><span class="a-lbl">Instagram</span></a>
   </div>
 
   <!-- LIVE PHOTO COUNTER -->
@@ -49,10 +49,43 @@
     <!-- HERO SECTION MAPS DIRECTLY TO YOUR IMAGE LAYOUT -->
     <section id="home" class="master-hero-layout">
       <div class="interactive-click-layer">
-        <!-- लाइव बटन्स जो इमेज के बटन्स के ऊपर बिल्कुल सटीक बैठेंगे -->
         <div class="action-placement-box">
           <button class="invisible-overlay-btn" onclick="openLoginModal()" title="View Albums"></button>
           <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO,%20I%20want%20to%20watch%20showreel." target="_blank" class="invisible-overlay-btn btn-showreel" title="Watch Showreel"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW DIGITAL INTERACTIVE HUB (E-ALBUM & INSTAGRAM REELS GRID) -->
+    <section id="digitalHub" class="premium-interactive-router">
+      <div class="container">
+        <div class="router-grid">
+          
+          <!-- E-ALBUM PORTAL BOX -->
+          <div class="router-card royal-gold-card">
+            <div class="r-badge">LIVE DIGITAL BOOK</div>
+            <div class="r-icon">📖</div>
+            <h3>View Digital E-Album</h3>
+            <p>सरिता फोटो स्टूडियो द्वारा तैयार की गई आपकी प्रीमियम और एक्सक्लूसिव डिजिटल एल्बम बुक यहाँ लाइव खोलें।</p>
+            <a href="https://view.ealbum.in/?c=73007922M9" target="_blank" class="router-action-btn">Open E-Album ⚡</a>
+          </div>
+
+          <!-- INSTAGRAM WATCH REELS BOX (मल्टीपल लिंक्स सपोर्टेड) -->
+          <div class="router-card royal-red-card">
+            <div class="r-badge">CINEMATIC TEASERS</div>
+            <div class="r-icon">🎬</div>
+            <h3>Instagram Wedding Reels</h3>
+            <p>हमारी सबसे बेहतरीन, वायरल और सबसे लोकप्रिय रील्स नीचे क्लिक करके सीधे देखें:</p>
+            
+            <div class="reels-links-btn-group">
+              <a href="https://www.instagram.com/reel/DCZ8gtruE48/?igsh=ZWF4MTExajZxN2l4" target="_blank" class="mini-reel-btn">🌸 Varmala Highlight</a>
+              <a href="https://www.instagram.com/reel/DSXtcLGj8eD/?utm_source=ig_web_copy_link" target="_blank" class="mini-reel-btn">💛 Vibrant Haldi</a>
+              <a href="https://www.instagram.com/reel/DR33oavjxWu/?utm_source=ig_web_copy_link" target="_blank" class="mini-reel-btn">👑 Royal Wedding</a>
+              <a href="https://www.instagram.com/panwar3695/reel/C6Lb2tmL1P9k-4YvT6iBxMtRQsLYjWPfk3TQRY0/" target="_blank" class="mini-reel-btn">✨ Maang Bharai</a>
+              <a href="https://www.instagram.com/panwar3695/reel/C6Nx6_gLLE1gV0g4FYkRYST9AoHvD-8CDqJM3M0/" target="_blank" class="mini-reel-btn">🔥 Shahi Phere</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -64,15 +97,15 @@
         <p class="text-center" style="color: var(--text-secondary); margin-bottom: 50px; font-size: 15px;">सिंबल-वाइज़ प्रीमियम प्रेजेंटेशन</p>
 
         <div class="services-symbol-grid">
-          <div class="sym-card"><div class="s-icon">👑</div><h3>Wedding Shoot</h3><p>शाही शादियों की यादगार कवरेज</p></div>
+          <div class="sym-card" onclick="window.open('https://www.instagram.com/p/DSr9LzUD40r/', '_blank')" style="cursor:pointer;"><div class="s-icon">👑</div><h3>Wedding Shoot</h3><p>शाही शादियों की बेमिसाल यादें (Click to View Photo)</p></div>
           <div class="sym-card"><div class="s-icon">🧸</div><h3>Baby Shoot</h3><p>मासूम बचपन के हँसते हुए पल</p></div>
-          <div class="sym-card"><div class="s-icon">🌹</div><h3>Pre-Wedding Shoot</h3><p>सिनेमाई अंदाज़ में आपकी लव स्टोरी</p></div>
-          <div class="sym-card"><div class="s-icon">🎬</div><h3>Cinematic Videoshoot</h3><p>हाई-एंड मूवी स्टाइल वीडियो</p></div>
-          <div class="sym-card"><div class="s-icon">🎞️</div><h3>Wedding Reels</h3><p>ट्रेंडिंग इंस्टाग्राम वीडियो और कट्स</p></div>
-          <div class="sym-card"><div class="s-icon">📸</div><h3>Candid Photoshoot</h3><p>प्राकृतिक हाव-भाव वाले अनमोल क्लिक्स</p></div>
+          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DT0oRQHAdvo/', '_blank')" style="cursor:pointer;"><div class="s-icon">🌹</div><h3>Pre-Wedding Shoot</h3><p>सिनेमाई अंदाज़ में आपकी लव स्टोरी (Click to Play)</p></div>
+          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DDKJbtYt3F1/', '_blank')" style="cursor:pointer;"><div class="s-icon">🎬</div><h3>Cinematic Videoshoot</h3><p>हाई-एंड मूवी स्टाइल वीडियो (Click to Play)</p></div>
+          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DR33oavjxWu/', '_blank')" style="cursor:pointer;"><div class="s-icon"> 🎞️</div><h3>Wedding Reels</h3><p>इंस्टाग्राम रील्स और कट्स (Click to Play)</p></div>
+          <div class="sym-card" onclick="window.open('https://www.instagram.com/p/DShvFevD7EK/', '_blank')" style="cursor:pointer;"><div class="s-icon">📸</div><h3>Candid Photoshoot</h3><p>प्राकृतिक हाव-भाव वाले अनमोल क्लिक्स (Click to View Photo)</p></div>
           <div class="sym-card"><div class="s-icon">🎨</div><h3>Traditional Shoot</h3><p>रीति-रिवाज और सांस्कृतिक यादें</p></div>
           <div class="sym-card"><div class="s-icon">🛸</div><h3>Drone Shoot</h3><p>भव्य और शानदार एरियल शॉट्स</p></div>
-          <div class="sym-card"><div class="s-icon">📡</div><h3>Live Telecast</h3><p>फुल एचडी ऑनलाइन लाइव स्ट्रीमिंग</p></div>
+          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DH1aHMRN24o/', '_blank')" style="cursor:pointer;"><div class="s-icon">📡</div><h3>Live Telecast</h3><p>फुल एचडी ऑनलाइन लाइव स्ट्रीमिंग (Click to Play)</p></div>
         </div>
       </div>
     </section>
@@ -85,8 +118,8 @@
         
         <div class="gallery-grid" id="premiumGallery"></div>
 
-        <div id="selection" class="submit-selection-box text-center">
-          <h3 class="premium-section-title" style="font-size: 28px;">Ready with your selection?</h3>
+        <div id="selection" class="submit-selection-box text-center" style="margin-top: 50px;">
+          <h3 class="premium-section-title" style="font-size: 28px; margin-bottom: 20px;">Ready with your selection?</h3>
           <button class="submit-royal-btn" id="submitBtn" onclick="submitSelectionToBackend()">मनोज जी को सिलेक्शन भेजें ⚡</button>
         </div>
       </div>
@@ -99,8 +132,8 @@
       <div class="royal-badge">SECURE ENCRYPTION</div>
       <h3>क्लाइंट गैलरी लॉगिन</h3>
       <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">अपना नाम और कोड डालकर गैलरी को लाइव लोड करें:</p>
-      <input type="text" id="clientNameInput" placeholder="अपना नाम (जैसे: Alok Kumar)" autocomplete="off">
-      <input type="text" id="clientCodeInput" placeholder="गैलरी कोड (जैसे: ALOK50)" autocomplete="off">
+      <input type="text" id="clientNameInput" placeholder="अपना नाम" autocomplete="off">
+      <input type="text" id="clientCodeInput" placeholder="गैलरी कोड" autocomplete="off">
       <div style="display: flex; gap: 12px; margin-top: 10px;">
         <button class="close-modal-btn" onclick="closeLoginModal()">बंद करें</button>
         <button class="submit-royal-btn" id="loginSubmitBtn" onclick="checkClientCode()">गैलरी खोलें ✨</button>
@@ -124,14 +157,14 @@
     💬 Need Help? Chat Now
   </a>
 
-  <!-- LUXURY FOOTER -->
+  <!-- FOOTER -->
   <footer class="luxury-footer">
     <div class="container text-center">
-      <p>&copy; 2026 Sarita Photo v2.0 — Premium Layout Edition. All Rights Reserved.</p>
+      <p>© 2026 Sarita Photo v2.5 — Premium Layout Edition. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- CORE CODE LOGIC ENGINE -->
+  <!-- ENGINE SCRIPT -->
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZqtbLaEC611pbaQv4DS1yBsAW276A98ylv0KWv4xauaE7cf3IGcXHvUbmudePZoGkVA/exec";
     let selectedPhotos = []; let allLoadedPhotos = []; let currentLightboxIndex = 0; let currentClientCode = ""; let currentClientName = "";
@@ -165,17 +198,17 @@
 
     function renderGallery(photos) {
       const gallery = document.getElementById('premiumGallery'); gallery.innerHTML = "";
-      if (photos.length === 0) { gallery.innerHTML = "<p>कोई तस्वीरें नहीं मिलीं।</p>"; return; }
+      if (!photos || photos.length === 0) { gallery.innerHTML = "<p class='text-center' style='grid-column: 1/-1; padding: 40px; color: var(--text-secondary);'>कोई तस्वीरें नहीं मिलीं या फोल्डर खाली है।</p>"; return; }
 
       photos.forEach((photo, index) => {
-        const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w800`;
+        const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w600`;
         const card = document.createElement('div');
         card.className = "gallery-card"; card.id = `card_${photo.id}`;
         card.innerHTML = `
           <div class="gallery-img-wrapper">
             <img src="${imgUrl}" alt="${photo.name}" class="protect-img" loading="lazy" onclick="openLightbox(${index})">
             <div class="screenshot-overlay"></div>
-            <button class="heart-select-btn" onclick="toggleHeartSelect(this, '${photo.id}', '${photo.name}')">❤️</button>
+            <button class="heart-select-btn" onclick="toggleHeartSelect(event, this, '${photo.id}', '${photo.name}')">❤️</button>
             <div class="gold-tick-mark">✓</div>
           </div>
           <h3>${photo.name}</h3>
@@ -185,7 +218,8 @@
       applyAntiDownload();
     }
 
-    function toggleHeartSelect(btnElement, photoId, photoName) {
+    function toggleHeartSelect(event, btnElement, photoId, photoName) {
+      event.stopPropagation();
       btnElement.classList.toggle('selected');
       document.getElementById(`card_${photoId}`).classList.toggle('gold-selected-card');
       if (selectedPhotos.includes(photoName)) { selectedPhotos = selectedPhotos.filter(name => name !== photoName); }
