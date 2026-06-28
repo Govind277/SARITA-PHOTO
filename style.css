@@ -1,4 +1,4 @@
-/* SARITA PHOTO V2.5 - INTERACTIVE AUDIO/VIDEO & MULTI-REEL CONFIG */
+/* SARITA PHOTO V2.6 - EMBEDDED INSTAGRAM REEL SYSTEM CONFIG */
 :root {
   --theme-primary: #A81D2A;
   --theme-secondary: #E3AB3B;
@@ -45,7 +45,7 @@ body { font-family: var(--ff-body); background: var(--bg-primary); color: var(--
 .invisible-overlay-btn { width: 165px; height: 50px; background: transparent; border: none; cursor: pointer; border-radius: 30px; }
 .btn-showreel { width: 185px; }
 
-/* MULTI-REEL INTERACTIVE DOCK */
+/* DIGITAL INTERACTIVE HUB */
 .premium-interactive-router { padding: 80px 0; background: #FFFDF9; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .router-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 .router-card { background: #fff; padding: 45px 35px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow-premium); position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.3s; }
@@ -58,10 +58,22 @@ body { font-family: var(--ff-body); background: var(--bg-primary); color: var(--
 .router-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 25px; line-height: 1.6; }
 .router-action-btn { display: inline-block; padding: 14px 40px; border-radius: 30px; font-weight: 700; text-decoration: none; color: #fff; background: linear-gradient(135deg, var(--theme-secondary), #C5932A); box-shadow: 0 4px 15px rgba(227,171,59,0.25); font-size: 15px; }
 
-/* REELS MULTI-BUTTON GRID SYSTEM */
-.reels-links-btn-group { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 320px; }
-.mini-reel-btn { display: block; text-align: center; padding: 10px 15px; background: var(--bg-primary); color: var(--text-primary); border: 1px solid var(--border); border-radius: 25px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
-.mini-reel-btn:hover { background: var(--theme-primary); color: #fff; border-color: var(--theme-primary); transform: scale(1.03); }
+/* IN-WEBSITE INSTAGRAM VIDEO STYLING */
+.instagram-video-embed-container {
+  width: 100%;
+  max-width: 320px;
+  height: 440px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+  background: #000;
+}
+.embed-reel-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 /* SERVICES SYMBOL GRID */
 .services-symbol-section, .secure-selection-section { padding: 90px 0; background: var(--bg-primary); clear: both; }
@@ -127,5 +139,4 @@ body { font-family: var(--ff-body); background: var(--bg-primary); color: var(--
   .action-placement-box { bottom: 40px; left: 5%; width: 90%; justify-content: center; }
   .invisible-overlay-btn { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); }
   .services-symbol-grid, .gallery-grid { grid-template-columns: repeat(1, 1fr); }
-  .reels-links-btn-group { max-width: 100%; }
 }
