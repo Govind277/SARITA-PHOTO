@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarita Photo v2.9 | Premium Studio Gallery</title>
+  <title>Sarita Photo v2.6 | Premium Video Integration</title>
 
   <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
   </div>
 
   <main>
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION MAPS DIRECTLY TO YOUR IMAGE LAYOUT -->
     <section id="home" class="master-hero-layout">
       <div class="interactive-click-layer">
         <div class="action-placement-box">
@@ -56,7 +56,7 @@
       </div>
     </section>
 
-    <!-- DIGITAL INTERACTIVE HUB -->
+    <!-- NEW DIGITAL INTERACTIVE HUB (E-ALBUM & LIVE INSTAGRAM VIDEO PLAYER) -->
     <section id="digitalHub" class="premium-interactive-router">
       <div class="container">
         <div class="router-grid">
@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <!-- SERVICES ARCHITECTURE -->
+    <!-- SYMBOL WISE SERVICES ARCHITECTURE -->
     <section id="services" class="services-symbol-section">
       <div class="container">
         <h2 class="premium-section-title text-center">Our Specializations</h2>
@@ -156,13 +156,13 @@
   <!-- FOOTER -->
   <footer class="luxury-footer">
     <div class="container text-center">
-      <p>© 2026 Sarita Photo v2.9 — Royal Dynamic Edition. All Rights Reserved.</p>
+      <p>© 2026 Sarita Photo v2.6 — Video Live Stream Edition. All Rights Reserved.</p>
     </div>
   </footer>
 
   <!-- ENGINE SCRIPT -->
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSBat4umk6uaZnx5UdAFwxU3heT20umU549czV-MCKkCjQNTjvWsX9a-9zUv5S0Wnz/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxv3HPucdleWlEmv72zXOVcMvJ-PRNq37Eckao3vV023HuXAmT9PyEotQQfRI9CQ6y_dw/exec";
     let selectedPhotos = []; let allLoadedPhotos = []; let currentLightboxIndex = 0; let currentClientCode = ""; let currentClientName = "";
 
     function openLoginModal() { document.getElementById('loginModal').classList.add('active'); }
@@ -233,7 +233,7 @@
 
     async function submitSelectionToBackend() {
       if (selectedPhotos.length === 0) { alert("कृपया तस्वीरें सिलेक्ट करें!"); return; }
-      if (!confirm(`क्या आप अपनी चुनी हुई ${selectedPhotos.length} तस्वीरें锁 करना चाहते हैं?`)) return;
+      if (!confirm(`क्या आप अपनी चुनी हुई ${selectedPhotos.length} तस्वीरें लॉक करना चाहते हैं?`)) return;
       const btn = document.getElementById('submitBtn'); btn.innerText = "सेव हो रहा है..."; btn.disabled = true;
       try {
         const response = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify({ action: "submitSelection", photos: selectedPhotos, clientCode: currentClientCode, clientName: currentClientName }) });
