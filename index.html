@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarita Photo v2.6 | Premium Video Integration</title>
+  <title>Sarita Photo v3.0 | Premium Studio Gallery</title>
 
   <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
   </div>
 
   <main>
-    <!-- HERO SECTION MAPS DIRECTLY TO YOUR IMAGE LAYOUT -->
+    <!-- HERO SECTION -->
     <section id="home" class="master-hero-layout">
       <div class="interactive-click-layer">
         <div class="action-placement-box">
@@ -56,7 +56,7 @@
       </div>
     </section>
 
-    <!-- NEW DIGITAL INTERACTIVE HUB (E-ALBUM & LIVE INSTAGRAM VIDEO PLAYER) -->
+    <!-- DIGITAL INTERACTIVE HUB -->
     <section id="digitalHub" class="premium-interactive-router">
       <div class="container">
         <div class="router-grid">
@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <!-- SYMBOL WISE SERVICES ARCHITECTURE -->
+    <!-- SERVICES ARCHITECTURE -->
     <section id="services" class="services-symbol-section">
       <div class="container">
         <h2 class="premium-section-title text-center">Our Specializations</h2>
@@ -156,13 +156,13 @@
   <!-- FOOTER -->
   <footer class="luxury-footer">
     <div class="container text-center">
-      <p>© 2026 Sarita Photo v2.6 — Video Live Stream Edition. All Rights Reserved.</p>
+      <p>© 2026 Sarita Photo v3.0 — Royal Multi-Folder Edition. All Rights Reserved.</p>
     </div>
   </footer>
 
   <!-- ENGINE SCRIPT -->
   <script>
-   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxv3HPucdleWlEmv72zXOVcMvJ-PRNq37Eckao3vV023HuXAmT9PyEotQQfRI9CQ6y_dw/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxv3HPucdleWlEmv72zXOVcMvJ-PRNq37Eckao3vV023HuXAmT9PyEotQQfRI9CQ6y_dw/exec";
     let selectedPhotos = []; let allLoadedPhotos = []; let currentLightboxIndex = 0; let currentClientCode = ""; let currentClientName = "";
 
     function openLoginModal() { document.getElementById('loginModal').classList.add('active'); }
@@ -194,6 +194,12 @@
 
     function renderGallery(photos) {
       const gallery = document.getElementById('premiumGallery'); gallery.innerHTML = "";
+      
+      // ड्राइव के सब-फोल्डर्स की तस्वीरों का क्रम 1 से आगे सीधा करने का कोड
+      if (photos && photos.length > 0) {
+        photos.reverse();
+      }
+
       if (!photos || photos.length === 0) { gallery.innerHTML = "<p class='text-center' style='grid-column: 1/-1; padding: 40px; color: var(--text-secondary);'>कोई तस्वीरें नहीं मिलीं। कृपया फोल्डर चेक करें।</p>"; return; }
 
       photos.forEach((photo, index) => {
