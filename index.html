@@ -1,258 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarita Photo v3.1 | Premium Studio Gallery</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e8">
+  <meta name="description" content="SARITA PHOTO — Wedding photography, cinematic films, candid photography, pre-wedding, baby shoots and premium E-Album in Bikaner, Rajasthan.">
+  <title>SARITA PHOTO | Wedding Photography & Cinematic Films</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Hind:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="no-select">
-
-  <header class="customHeader">
-    <div class="header-container">
-      <div class="logo-placeholder-invisible"></div>
-      <nav class="nav-container">
-        <ul class="nav-links">
-          <li><a href="#home" class="sub-menu">Home</a></li>
-          <li><a href="#services" class="sub-menu">Services</a></li>
-          <li><a href="#digitalHub" class="sub-menu">E-Album & Videos</a></li>
-          <li><a href="#selectionGallery" class="sub-menu">Gallery Portal</a></li>
-        </ul>
-      </nav>
-      <div class="header-right-btns">
-        <a href="tel:+919314711514" class="phone-display-btn">📞 9314711514</a>
-        <button class="client-login-trigger" onclick="openLoginModal()">👤 Client Login</button>
-      </div>
-    </div>
+<body>
+  <div class="announcement"><span>✦</span> Creating Timeless Wedding Stories Since 1985 <span>✦</span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="SARITA PHOTO home">
+      <img src="logo.png.png" alt="SARITA PHOTO logo">
+      <span class="brand-copy"><strong>SARITA PHOTO</strong><small>WEDDING • CINEMATIC • MEMORIES</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a><a href="#services">Our Services</a><a href="#experience">Our Story</a><a href="#albums">E-Album & Reels</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="header-call" href="tel:+919314711514">☎ <span>Call Us</span></a>
   </header>
 
-  <div class="sticky-right-action-panel">
-    <a href="tel:+919314711514" class="action-btn-item"><span class="a-icon">📞</span><span class="a-lbl">Call Us</span></a>
-    <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20👋" target="_blank" class="action-btn-item"><span class="a-icon">💬</span><span class="a-lbl">WhatsApp</span></a>
-    <a href="https://www.instagram.com/panwar3695/" target="_blank" class="action-btn-item"><span class="a-icon">📸</span><span class="a-lbl">Instagram</span></a>
-  </div>
-
-  <div class="live-counter-badge" id="liveCounterBadge">
-    ❤️ Selected: <span id="selectedCount">0</span> Photos
-  </div>
-
   <main>
-    <section id="home" class="master-hero-layout">
-      <div class="interactive-click-layer">
-        <div class="action-placement-box">
-          <button class="invisible-overlay-btn" onclick="openLoginModal()" title="View Albums"></button>
-          <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO,%20I%20want%20to%20watch%20showreel." target="_blank" class="invisible-overlay-btn btn-showreel" title="Watch Showreel"></a>
+    <section class="hero" id="home" aria-label="SARITA PHOTO wedding photography">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> BIKANER • RAJASTHAN <span></span></p>
+        <h1>Every Moment.<br><em>Forever Beautiful.</em></h1>
+        <p class="hero-hindi">आपकी कहानी, हमारी नज़र — यादें जो ज़िंदगी भर साथ रहें।</p>
+        <p class="hero-desc">Wedding Photography • Cinematic Films • Candid Moments</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#services">Explore Our Services <span>↗</span></a>
+          <a class="btn btn-outline" href="https://wa.me/919314711514?text=Namaste%20SARITA%20PHOTO%2C%20mujhe%20wedding%20photography%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank" rel="noopener">Plan Your Shoot</a>
         </div>
+        <div class="hero-trust"><span>✦</span> Real moments, genuine smiles, timeless memories.</div>
+      </div>
+      <a class="scroll-cue" href="#services" aria-label="Scroll to services">↓</a>
+    </section>
+
+    <section class="intro section-pad" id="experience">
+      <div class="section-kicker">THE SARITA PHOTO EXPERIENCE</div>
+      <h2>Memories are precious.<br><em>Let’s make them timeless.</em></h2>
+      <p class="intro-copy">शादी के सबसे खास पलों से लेकर परिवार की छोटी-छोटी खुशियों तक — हम हर कहानी को दिल से और खूबसूरती से कैद करते हैं। हमारी कोशिश है कि हर तस्वीर देखते ही वो पल फिर से जी उठे।</p>
+      <div class="stats">
+        <div><strong>Since 1985</strong><span>Photography Legacy</span></div>
+        <i></i><div><strong>Every Emotion</strong><span>Captured with Care</span></div>
+        <i></i><div><strong>One Beautiful Story</strong><span>Yours, Always</span></div>
       </div>
     </section>
 
-    <section id="digitalHub" class="premium-interactive-router">
-      <div class="container">
-        <div class="router-grid">
-          
-          <div class="router-card royal-gold-card">
-            <div class="r-badge">LIVE DIGITAL BOOK</div>
-            <div class="r-icon">📖</div>
-            <h3>View Digital E-Album</h3>
-            <p>सरिता फोटो स्टूडियो द्वारा तैयार की गई आपकी प्रीमियम और एक्सक्लूसिव डिजिटल एल्बम बुक यहाँ लाइव खोलें।</p>
-            <a href="https://view.ealbum.in/?c=73007922M9" target="_blank" class="router-action-btn">Open E-Album ⚡</a>
-          </div>
-
-          <div class="router-card royal-red-card">
-            <div class="r-badge">LIVE REEL PLAYER</div>
-            <div class="r-icon">🎬</div>
-            <h3>Cinematic Varmala Highlight</h3>
-            <p style="margin-bottom: 15px;">बिना क्लिक किए हमारी सबसे लोकप्रिय सिनेमैटिक रील सीधे यहीं प्ले करके देखें:</p>
-            
-            <div class="instagram-video-embed-container">
-              <iframe src="https://www.instagram.com/reel/DCZ8gtruE48/embed/captioned/" class="embed-reel-frame" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media"></iframe>
-            </div>
-          </div>
-
-        </div>
+    <section class="services section-pad" id="services">
+      <div class="section-heading">
+        <div><div class="section-kicker">WHAT WE CREATE</div><h2>Our <em>Specialities</em></h2></div>
+        <p>हर याद के लिए एक खास अंदाज़।<br>आपके पल, हमारी क्रिएटिविटी।</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card"><div class="service-icon">♛</div><span class="service-no">01</span><h3>Wedding Photography</h3><p>शादी की हर रस्म, हर भावना और हर खास पल की शानदार तस्वीरें।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Wedding%20Photography" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">🎬</div><span class="service-no">02</span><h3>Cinematic Films</h3><p>आपकी शादी की कहानी को फिल्मी अंदाज़ में दिखाने वाली सिनेमैटिक वीडियो।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Cinematic%20Wedding%20Films" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">♡</div><span class="service-no">03</span><h3>Candid Photography</h3><p>बिना बनावट के असली मुस्कानें, इमोशन्स और नेचुरल मोमेंट्स।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Candid%20Photography" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">🌹</div><span class="service-no">04</span><h3>Pre-Wedding Shoot</h3><p>आप दोनों की लव स्टोरी के लिए खूबसूरत लोकेशन और क्रिएटिव फ्रेम्स।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Pre-Wedding%20Shoot" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">🧸</div><span class="service-no">05</span><h3>Baby & Family Shoot</h3><p>बचपन की मासूमियत और परिवार की खुशियों को हमेशा के लिए संजोएँ।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Baby%20or%20Family%20Shoot" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">✦</div><span class="service-no">06</span><h3>Wedding Highlights & Teasers</h3><p>शादी के यादगार पलों का खूबसूरत highlight, teaser और story edit।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Wedding%20Highlights" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">▣</div><span class="service-no">07</span><h3>Instagram Reels</h3><p>ट्रेंडिंग स्टाइल में vertical reels और social-media-ready videos।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Wedding%20Reels" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">⌁</div><span class="service-no">08</span><h3>Drone Photography</h3><p>आपके खास आयोजन के भव्य aerial views और cinematic shots।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Drone%20Shoot" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">◉</div><span class="service-no">09</span><h3>Live Streaming</h3><p>दूर बैठे परिवार और दोस्तों तक समारोह को लाइव पहुँचाने की सुविधा।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Live%20Streaming" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">▤</div><span class="service-no">10</span><h3>Premium E-Album</h3><p>डिजिटल एल्बम में अपनी यादों को खूबसूरती से देखें और शेयर करें।</p><a href="#albums">View E-Album ↗</a></article>
+        <article class="service-card"><div class="service-icon">✉</div><span class="service-no">11</span><h3>Invitation Design</h3><p>शादी और पारिवारिक आयोजनों के लिए आकर्षक डिजिटल निमंत्रण।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Digital%20Invitation%20Design" target="_blank" rel="noopener">Enquire Now ↗</a></article>
+        <article class="service-card"><div class="service-icon">✿</div><span class="service-no">12</span><h3>Traditional Photography</h3><p>परिवार, रस्मों और सांस्कृतिक परंपराओं की पूरी कवरेज।</p><a href="https://wa.me/919314711514?text=I%20am%20interested%20in%20Traditional%20Photography" target="_blank" rel="noopener">Enquire Now ↗</a></article>
       </div>
     </section>
 
-    <section id="services" class="services-symbol-section">
-      <div class="container">
-        <h2 class="premium-section-title text-center">Our Specializations</h2>
-        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 50px; font-size: 15px;">सिंबल-वाइज़ प्रीमियम प्रेजेंटेशन</p>
-
-        <div class="services-symbol-grid">
-          <div class="sym-card" onclick="window.open('https://www.instagram.com/p/DSr9LzUD40r/', '_blank')" style="cursor:pointer;"><div class="s-icon">👑</div><h3>Wedding Shoot</h3><p>शाही शादियों की बेमिसाल यादें</p></div>
-          <div class="sym-card"><div class="s-icon">🧸</div><h3>Baby Shoot</h3><p>मासूम बचपन के हँसते हुए पल</p></div>
-          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DT0oRQHAdvo/', '_blank')" style="cursor:pointer;"><div class="s-icon">🌹</div><h3>Pre-Wedding Shoot</h3><p>सिनेमाई अंदाज़ में लव स्टोरी</p></div>
-          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DDKJbtYt3F1/', '_blank')" style="cursor:pointer;"><div class="s-icon">🎬</div><h3>Cinematic Videoshoot</h3><p>हाई-エンド मूवी स्टाइल video</p></div>
-          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DR33oavjxWu/', '_blank')" style="cursor:pointer;"><div class="s-icon">🎞️</div><h3>Wedding Reels</h3><p>इंस्टाग्राम रील्स और कट्स</p></div>
-          <div class="sym-card" onclick="window.open('https://www.instagram.com/p/DShvFevD7EK/', '_blank')" style="cursor:pointer;"><div class="s-icon">📸</div><h3>Candid Photoshoot</h3><p>प्राकृतिक हाव-भाव वाले अनमोल क्लिक्स</p></div>
-          <div class="sym-card"><div class="s-icon">🎨</div><h3>Traditional Shoot</h3><p>रीति-रिवाज और सांस्कृतिक यादें</p></div>
-          <div class="sym-card"><div class="s-icon">🛸</div><h3>Drone Shoot</h3><p>भव्य और शानदार एरियल शॉट्स</p></div>
-          <div class="sym-card" onclick="window.open('https://www.instagram.com/reel/DH1aHMRN24o/', '_blank')" style="cursor:pointer;"><div class="s-icon">📡</div><h3>Live Telecast</h3><p>फुल एचडी ऑनलाइन लाइव स्ट्रीमिंग</p></div>
-        </div>
+    <section class="albums section-pad" id="albums">
+      <div class="section-kicker">YOUR MEMORIES, BEAUTIFULLY PRESENTED</div>
+      <h2>Explore Our <em>Digital World</em></h2>
+      <p class="section-lead">एल्बम खोलें, सिनेमैटिक रील देखें और हमारी फोटोग्राफी का अंदाज़ महसूस करें।</p>
+      <div class="digital-grid">
+        <article class="digital-card album-card">
+          <div class="digital-art album-art"><span class="art-flower">✿</span><div class="book-shape"><span>SARITA<br>PHOTO</span><small>YOUR STORY • YOUR MEMORIES</small></div></div>
+          <div class="digital-card-copy"><span class="pill">DIGITAL ALBUM</span><h3>Your Story in Every Page</h3><p>हमारी उपलब्ध डिजिटल एल्बम को पेज-बाय-पेज अनुभव के साथ खोलें।</p><a class="btn btn-red" href="https://view.ealbum.in/?c=73007922M9" target="_blank" rel="noopener">Open E-Album ↗</a></div>
+        </article>
+        <article class="digital-card reel-card">
+          <div class="reel-heading"><span class="pill pill-red">CINEMATIC REEL</span><h3>Wedding Moments in Motion</h3><p>हमारे काम की एक झलक — Instagram पर देखें।</p></div>
+          <div class="reel-frame"><iframe src="https://www.instagram.com/reel/DCZ8gtruE48/embed/" title="SARITA PHOTO cinematic wedding reel" loading="lazy" allowtransparency="true" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+          <a class="text-link" href="https://www.instagram.com/panwar3695/" target="_blank" rel="noopener">More on Instagram ↗</a>
+        </article>
       </div>
+      <div class="selection-note"><div class="selection-mark">♡</div><div><strong>Premium Photo Selection</strong><p>अपनी पसंद की तस्वीरें चुनने वाला क्लाइंट गैलरी पोर्टल जल्द जोड़ा जाएगा। अभी अपनी फोटो-सेलेक्शन लिंक के लिए हमसे संपर्क करें।</p></div><a class="btn btn-light" href="https://wa.me/919314711514?text=Namaste%20SARITA%20PHOTO%2C%20mujhe%20Premium%20Photo%20Selection%20ke%20liye%20madad%20chahiye." target="_blank" rel="noopener">Get Help on WhatsApp ↗</a></div>
     </section>
 
-    <section id="selectionGallery" class="secure-selection-section" style="display: none;">
-      <div class="container">
-        <h2 class="premium-section-title text-center" id="clientGalleryTitle">आपकी डिजिटल तिजोरी</h2>
-        <p class="text-center" style="color: var(--text-secondary); margin-bottom: 40px;">फोटो सिलेक्ट करने के लिए हार्ट (❤️) दबाएं। चुनी हुई तस्वीरों पर सुनहरी बॉर्डर आ जाएगी।</p>
-        
-        <div class="gallery-grid" id="premiumGallery"></div>
+    <section class="quote-band">
+      <div class="quote-ornament">❦</div>
+      <p>“Real moments, genuine smiles,<br><em>timeless memories.</em>”</p>
+      <span>SARITA PHOTO • BIKANER, RAJASTHAN</span>
+    </section>
 
-        <div id="selection" class="submit-selection-box text-center" style="margin-top: 50px;">
-          <h3 class="premium-section-title" style="font-size: 28px; margin-bottom: 20px;">Ready with your selection?</h3>
-          <button class="submit-royal-btn" id="submitBtn" onclick="submitSelectionToBackend()">मनोज जी को सिलेक्शन भेजें ⚡</button>
-        </div>
-      </div>
+    <section class="contact section-pad" id="contact">
+      <div class="section-kicker">LET’S CREATE SOMETHING BEAUTIFUL</div>
+      <h2>Your Day. Your Story.<br><em>Our Camera.</em></h2>
+      <p>अपनी तारीख, इवेंट या शूट के बारे में बात करने के लिए हमें संपर्क करें।</p>
+      <div class="contact-actions"><a class="btn btn-red" href="https://wa.me/919314711514?text=Namaste%20SARITA%20PHOTO%2C%20mujhe%20booking%20ke%20baare%20mein%20baat%20karni%20hai." target="_blank" rel="noopener">Chat on WhatsApp ↗</a><a class="btn btn-outline-red" href="tel:+919314711514">Call 9314711514</a></div>
+      <div class="contact-details"><span>Photographer</span><strong>MANOJ KUMAR PANWAR</strong><div><a href="tel:+919314711514">9314711514</a><b>•</b><a href="tel:+919351077777">9351077777</a></div><small>Bikaner, Rajasthan, India</small></div>
+      <div class="social-links"><a href="https://www.instagram.com/panwar3695/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://wa.me/919314711514" target="_blank" rel="noopener">WhatsApp ↗</a><a href="tel:+919314711514">Call Us ↗</a></div>
     </section>
   </main>
 
-  <div class="popup-overlay" id="loginModal">
-    <div class="popup-box">
-      <div class="royal-badge">SECURE ENCRYPTION</div>
-      <h3>क्लाइंट गैलरी लॉगिन</h3>
-      <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 20px;">अपना नाम और कोड डालकर गैलरी को लाइव लोड करें:</p>
-      <input type="text" id="clientNameInput" placeholder="अपना नाम" autocomplete="off">
-      <input type="text" id="clientCodeInput" placeholder="गैलरी कोड" autocomplete="off">
-      <div style="display: flex; gap: 12px; margin-top: 10px;">
-        <button class="close-modal-btn" onclick="closeLoginModal()">बंद करें</button>
-        <button class="submit-royal-btn" id="loginSubmitBtn" onclick="checkClientCode()">गैलरी खोलें ✨</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <span class="close-lightbox" onclick="closeLightbox()">×</span>
-    <button class="lightbox-arrow arrow-left" onclick="changeLightboxImage(event, -1)">◀</button>
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <img id="lightboxImg" src="" alt="Full Screen View" class="protect-img">
-      <div id="lightboxImgName" class="lightbox-img-name"></div>
-    </div>
-    <button class="lightbox-arrow arrow-right" onclick="changeLightboxImage(event, 1)">▶</button>
-  </div>
-
-  <a href="https://wa.me/919314711514?text=Hello%20SARITA%20PHOTO%20I%20need%20help%20regarding%20Photo%20Selection." class="floating-whatsapp-trigger" target="_blank">
-    💬 Need Help? Chat Now
-  </a>
-
-  <footer class="luxury-footer">
-    <div class="container text-center">
-      <p>© 2026 Sarita Photo v3.1 — Royal Slider Fixed Edition. All Rights Reserved.</p>
-    </div>
-  </footer>
+  <a class="floating-whatsapp" href="https://wa.me/919314711514?text=Namaste%20SARITA%20PHOTO%2C%20mujhe%20jaankari%20chahiye." target="_blank" rel="noopener" aria-label="Chat with SARITA PHOTO on WhatsApp"><span>☏</span><b>Chat Now</b></a>
+  <footer class="site-footer"><a class="footer-brand" href="#home">SARITA PHOTO</a><p>Creating Timeless Wedding Stories Since 1985</p><small>© <span id="year">2026</span> SARITA PHOTO. All rights reserved.</small></footer>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxv3HPucdleWlEmv72zXOVcMvJ-PRNq37Eckao3vV023HuXAmT9PyEotQQfRI9CQ6y_dw/exec";
-    let selectedPhotos = []; let allLoadedPhotos = []; let currentLightboxIndex = 0; let currentClientCode = ""; let currentClientName = "";
-
-    function openLoginModal() { document.getElementById('loginModal').classList.add('active'); }
-    function closeLoginModal() { document.getElementById('loginModal').classList.remove('active'); }
-    function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
-
-    async function checkClientCode() {
-      const nameInput = document.getElementById('clientNameInput').value.trim();
-      const codeInput = document.getElementById('clientCodeInput').value.trim();
-      if(!nameInput || !codeInput) { alert("कृपया नाम और कोड भरें!"); return; }
-      
-      const btn = document.getElementById('loginSubmitBtn');
-      btn.innerText = "सुरक्षित लॉगिन हो रहा है..."; btn.disabled = true;
-
-      try {
-        const response = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify({ action: "login", clientCode: codeInput }) });
-        const result = await response.json();
-        if (result.status === "success") {
-          currentClientCode = codeInput; currentClientName = result.clientName;
-          
-          // डेटाबेस से आते ही यहाँ पूरी लिस्ट को रिवर्स कर दिया ताकि गैलरी और लाइटबॉक्स दोनों का आर्डर सीधा (1,2,3...) हो जाए
-          if (result.photos && result.photos.length > 0) {
-            result.photos.reverse();
-          }
-          allLoadedPhotos = result.photos;
-          
-          document.getElementById('clientGalleryTitle').innerText = "शाही गैलरी: " + currentClientName;
-          renderGallery(allLoadedPhotos);
-          closeLoginModal();
-          document.getElementById('selectionGallery').style.display = "block";
-          document.getElementById('selectionGallery').scrollIntoView({ behavior: 'smooth' });
-        } else { alert(result.message); }
-      } catch (err) { alert("कनेक्शन त्रुटि। दोबारा प्रयास करें।"); }
-      finally { btn.innerText = "गैलरी खोलें ✨"; btn.disabled = false; }
-    }
-
-    function renderGallery(photos) {
-      const gallery = document.getElementById('premiumGallery'); gallery.innerHTML = "";
-
-      if (!photos || photos.length === 0) { gallery.innerHTML = "<p class='text-center' style='grid-column: 1/-1; padding: 40px; color: var(--text-secondary);'>कोई तस्वीरें नहीं मिलीं। कृपया फोल्डर चेक करें।</p>"; return; }
-
-      photos.forEach((photo, index) => {
-        // यहाँ डॉलर सिंबल ($) की गलती को पूरी तरह फिक्स कर दिया गया है
-        const imgUrl = `https://lh3.googleusercontent.com/d/${photo.id}=w600`;
-        const card = document.createElement('div');
-        card.className = "gallery-card"; card.id = `card_${photo.id}`;
-        card.innerHTML = `
-          <div class="gallery-img-wrapper" onclick="openLightbox(${index})">
-            <img src="${imgUrl}" alt="${photo.name}" class="protect-img" loading="lazy">
-            <div class="screenshot-overlay"></div>
-            <button class="heart-select-btn" onclick="toggleHeartSelect(event, this, '${photo.id}', '${photo.name}')">❤️</button>
-            <div class="gold-tick-mark">✓</div>
-          </div>
-          <h3>${photo.name}</h3>
-        `;
-        gallery.appendChild(card);
-      });
-      applyAntiDownload();
-    }
-
-    function toggleHeartSelect(event, btnElement, photoId, photoName) {
-      event.stopPropagation();
-      btnElement.classList.toggle('selected');
-      document.getElementById(`card_${photoId}`).classList.toggle('gold-selected-card');
-      if (selectedPhotos.includes(photoName)) { selectedPhotos = selectedPhotos.filter(name => name !== photoName); }
-      else { selectedPhotos.push(photoName); }
-      document.getElementById('selectedCount').innerText = selectedPhotos.length;
-    }
-
-    function openLightbox(index) { currentLightboxIndex = index; showLightboxImage(); document.getElementById('lightbox').classList.add('active'); }
-    
-    function showLightboxImage() { 
-      const photo = allLoadedPhotos[currentLightboxIndex]; 
-      // यहाँ भी इमेज रेंडरिंग लिंक को $ सिंबल के साथ अपग्रेड कर दिया है ताकि फुल स्क्रीन एकदम साफ़ दिखे
-      document.getElementById('lightboxImg').src = `https://lh3.googleusercontent.com/d/${photo.id}=w1200`; 
-      document.getElementById('lightboxImgName').innerText = photo.name; 
-    }
-    
-    function changeLightboxImage(event, direction) { 
-      if (event) event.stopPropagation();
-      currentLightboxIndex += direction; 
-      if (currentLightboxIndex >= allLoadedPhotos.length) currentLightboxIndex = 0; 
-      if (currentLightboxIndex < 0) currentLightboxIndex = allLoadedPhotos.length - 1; 
-      showLightboxImage(); 
-    }
-
-    async function submitSelectionToBackend() {
-      if (selectedPhotos.length === 0) { alert("कृपया तस्वीरें सिलेक्ट करें!"); return; }
-      if (!confirm(`क्या आप अपनी चुनी हुई ${selectedPhotos.length} तस्वीरें लॉक करना चाहते हैं?`)) return;
-      const btn = document.getElementById('submitBtn'); btn.innerText = "सेव हो रहा है..."; btn.disabled = true;
-      try {
-        const response = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify({ action: "submitSelection", photos: selectedPhotos, clientCode: currentClientCode, clientName: currentClientName }) });
-        const data = await response.json();
-        if (data.status === "success") { alert("✅ सिलेक्शन सफलतापूर्वक मनोज जी के पास पहुंच गया है!"); window.location.reload(); }
-      } catch (err) { alert("त्रुटि आई।"); }
-      finally { btn.innerText = "मनोज जी को收藏 भेजें ⚡"; btn.disabled = false; }
-    }
-
-    function applyAntiDownload() {
-      document.querySelectorAll('.protect-img, .screenshot-overlay, .gallery-img-wrapper').forEach(el => {
-        el.addEventListener('contextmenu', e => e.preventDefault());
-        el.addEventListener('dragstart', e => e.preventDefault());
-      });
-    }
-    document.addEventListener('contextmenu', e => e.preventDefault());
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => {
+      const opened = mainNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(opened));
+      menuToggle.setAttribute('aria-label', opened ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = opened ? '×' : '☰';
+    });
+    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
