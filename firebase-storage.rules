@@ -1,0 +1,14 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Client album files are served only by the trusted Cloud Function
+    // using short-lived signed URLs. Browser clients cannot list, read,
+    // overwrite, or delete original album files directly.
+    match /client-albums/{albumId}/{allPaths=**} {
+      allow read, write: if false;
+    }
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
