@@ -271,3 +271,63 @@ body{background:#120d10;color:#f8eee9}.top-strip{background:#2a1018;color:#f5d9d
 .heritage-strip{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 4px}.heritage-strip span{display:flex;flex-direction:column;gap:2px;padding:11px 14px;border:1px solid rgba(235,192,169,.24);background:rgba(20,9,13,.42);backdrop-filter:blur(10px);border-radius:10px}.heritage-strip strong{font-size:10px;letter-spacing:1.2px;color:#f3c2b4}.heritage-strip small{font-size:10px;color:#e0ceca}
 .contact-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,1fr);gap:34px}.booking-card{padding:26px;border:1px solid rgba(225,178,154,.23);border-radius:16px;background:rgba(255,255,255,.045);backdrop-filter:blur(12px)}.booking-card h3{font:500 30px/1.1 var(--serif);margin:8px 0 20px;color:#fff1e9}#bookingForm{display:grid;gap:8px}#bookingForm label{font-size:11px;color:#e5cdca;font-weight:600;margin-top:5px}#bookingForm input,#bookingForm select,#bookingForm textarea{width:100%;padding:12px 13px;border-radius:8px;border:1px solid rgba(225,178,154,.24);background:#160e12;color:#fff4ee;font:13px var(--sans)}#bookingForm input:focus,#bookingForm select:focus,#bookingForm textarea:focus{outline:2px solid #b91c3c;outline-offset:1px}#bookingForm input[type=date]{color-scheme:dark}#bookingForm select option{background:#160e12;color:#fff}.booking-submit{justify-content:center;width:100%;margin-top:10px;cursor:pointer}.booking-note{font-size:10px;line-height:1.6;margin-top:6px}.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:9px;padding:12px 17px;border-radius:999px;background:#b20e32;color:#fff;text-decoration:none;font-size:12px;font-weight:700;box-shadow:0 7px 26px rgba(180,14,50,.42);border:1px solid rgba(255,255,255,.25)}.whatsapp-float span{font-size:18px}
 @media(max-width:760px){.contact-panel{grid-template-columns:1fr}.heritage-strip{gap:7px}.heritage-strip span{flex:1 1 42%;padding:9px}.heritage-strip strong{font-size:9px}.heritage-strip small{font-size:9px}.booking-card{padding:19px}.whatsapp-float{right:12px;bottom:12px;padding:12px 14px}.whatsapp-float b{font-size:11px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn-primary{transition:none}}
+
+
+/* BRIGHT INDIAN WEDDING RED • CREAM • GOLD THEME */
+:root{--paper:#fffaf3;--white:#ffffff;--ink:#4a1720;--muted:#795b5b;--gold:#b91f35;--gold-light:#d7a84c;--line:rgba(139,32,48,.16);--rose:#fff0e9}
+html{scroll-padding-top:90px;scroll-behavior:smooth}
+body{background:#fffaf3;color:#4a1720}
+.top-strip{background:linear-gradient(90deg,#a90f2d,#d62d42,#a90f2d);color:#fff7ed}
+.site-header{background:rgba(255,250,243,.96);border-bottom:1px solid rgba(155,25,48,.14);box-shadow:0 6px 24px rgba(94,23,33,.06);backdrop-filter:blur(14px)}
+.site-header a,.nav-links a,.main-nav a{color:#5c1825}
+.brand strong{color:#98152d}.brand small{color:#8b6260}
+.hero{background:#5e1022;color:#fffaf3}
+.hero-photo{filter:saturate(1.08)}
+.hero-shade{background:linear-gradient(90deg,rgba(84,8,28,.78),rgba(125,12,36,.48) 53%,rgba(111,14,32,.15)),linear-gradient(0deg,rgba(75,9,25,.45),transparent 55%)}
+.hero h1{color:#fffaf4}.hero-copy .hero-text{color:#fff1e9}.hero .eyebrow{color:#ffe0a2}
+.hero .text-link{color:#fff1d5}.hero-note{color:#ffe7d5}
+.hero-stamp{border-color:rgba(255,229,176,.6);background:rgba(92,10,29,.2);backdrop-filter:blur(10px)}
+.section-pad,.intro,.services,.ealbum-section,.gallery-section,.reviews,.contact-section,.mobile-app-section{background:#fffaf3}
+.intro-copy h2,.section-title h2,.ealbum-heading h2,.contact-panel h2,.mobile-app-copy h2{color:#5b1725}
+.intro-copy p,.section-title>p,.service-card p,.ealbum-lead,.ealbum-steps p,.ealbum-side-card p,.review-card p,.contact-panel p,.mobile-app-copy p{color:#76595a}
+.eyebrow{color:#a71935}
+.btn-primary,.app-install-btn{background:linear-gradient(135deg,#d52a43,#a60f2e);color:#fff!important;border:1px solid rgba(255,255,255,.45);box-shadow:0 7px 20px rgba(171,19,48,.22)}
+.btn-primary:hover,.app-install-btn:hover{box-shadow:0 10px 26px rgba(171,19,48,.32);transform:translateY(-2px)}
+.btn-outline,.text-link,.under-link{color:#a81934}
+.service-card,.ealbum-main-card,.ealbum-side-card,.review-card,.contact-panel,.mobile-app-card{background:rgba(255,255,255,.88);border:1px solid rgba(167,25,52,.14);box-shadow:0 12px 34px rgba(91,23,37,.07);backdrop-filter:blur(12px)}
+.service-card h3,.ealbum-main-card h3,.ealbum-side-card h3,.review-card h3,.contact-panel h3{color:#571725}
+.service-card img{border-radius:8px}
+.gallery-section{background:#fff3e9}
+.gallery-disclaimer,.ealbum-note,.ealbum-privacy,.install-help,.booking-note{color:#8b6766}
+.contact-phone{color:#8e1730}
+.site-footer{background:#8f102a;color:#fff4e9;border-top:3px solid #d8ad57}
+.site-footer a{color:#ffe0a2}
+.welcome-card{background:#fffaf3;border:1px solid rgba(179,40,54,.18);box-shadow:0 24px 80px rgba(73,11,28,.25)}
+.welcome-body{background:#fffaf3}.welcome-body h2{color:#5b1725}.welcome-body>p:not(.eyebrow){color:#76595a}.welcome-explore{color:#8e1730;border-color:rgba(167,25,52,.2)}
+.welcome-cover{background:linear-gradient(145deg,#9d102e,#d52c43 56%,#7c1028)}
+.heritage-strip span{background:rgba(255,250,243,.13);border-color:rgba(255,225,177,.55)}
+.heritage-strip strong{color:#ffe2a6}.heritage-strip small{color:#fff2e6}
+.booking-card{background:#fff;border:1px solid rgba(167,25,52,.16);box-shadow:0 12px 34px rgba(91,23,37,.07)}
+.booking-card h3{color:#5b1725}
+#bookingForm label{color:#6b3840}
+#bookingForm input,#bookingForm select,#bookingForm textarea{background:#fffdf9;color:#4a1720;border-color:rgba(167,25,52,.2)}
+#bookingForm input::placeholder,#bookingForm textarea::placeholder{color:#a48a87}
+#bookingForm input[type=date]{color-scheme:light}
+#bookingForm select option{background:#fffdf9;color:#4a1720}
+.whatsapp-float{background:linear-gradient(135deg,#c8203b,#9f102c);color:#fff;box-shadow:0 7px 24px rgba(165,15,45,.32)}
+.app-prompt{background:#fffaf3;border:1px solid rgba(167,25,52,.18);box-shadow:0 10px 28px rgba(91,23,37,.12);color:#5b1725}
+.app-prompt-copy strong{color:#8e1730}.app-prompt-copy span{color:#76595a}.app-prompt-icon{background:#a91431;color:#fff}
+.mobile-bottom-nav{display:none}
+@media(max-width:760px){
+ body{padding-bottom:76px}
+ .mobile-bottom-nav{position:fixed;left:10px;right:10px;bottom:calc(8px + env(safe-area-inset-bottom));z-index:45;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:7px 6px;background:rgba(255,250,243,.97);border:1px solid rgba(167,25,52,.17);border-radius:18px;box-shadow:0 8px 30px rgba(83,15,31,.2);backdrop-filter:blur(18px)}
+ .mobile-bottom-nav a{display:flex;min-width:0;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:5px 1px;border-radius:11px;text-decoration:none;color:#79172a}
+ .mobile-bottom-nav a span{font-size:20px;line-height:1.1}.mobile-bottom-nav a small{font-size:9px;font-weight:700;white-space:nowrap}
+ .mobile-bottom-nav .mobile-book-link{background:linear-gradient(135deg,#d52a43,#a60f2e);color:white}
+ .whatsapp-float{right:12px;bottom:92px;padding:10px 13px}
+ .app-prompt{margin:8px 12px;border-radius:13px}
+ .heritage-strip span{background:rgba(93,12,31,.26)}
+ .site-footer{padding-bottom:18px}
+}
+@media(display-mode:standalone){.site-header{padding-top:env(safe-area-inset-top)}.mobile-bottom-nav{bottom:calc(8px + env(safe-area-inset-bottom))}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
