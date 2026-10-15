@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "SARITA PHOTO — Wedding Photography & Client E-Album",
+  "short_name": "SARITA PHOTO",
+  "description": "Wedding photography, cinematic films and private client albums by SARITA PHOTO, Bikaner.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#faf7f1",
+  "theme_color": "#faf7f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"logo.png.png","sizes":"any","type":"image/png","purpose":"any"}
+  ]
+}
