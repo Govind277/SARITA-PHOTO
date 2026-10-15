@@ -35,6 +35,25 @@
     });
     document.addEventListener('keydown', event => { if (event.key === 'Escape') closeWelcome(); });
   }
+
+  // Booking form opens a pre-filled WhatsApp enquiry; the client must press Send.
+  const bookingForm = document.getElementById('bookingForm');
+  const dateField = document.getElementById('bookingDate');
+  if (dateField) { const d = new Date(); dateField.min = [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-'); }
+  if (bookingForm) bookingForm.addEventListener('submit', event => {
+    event.preventDefault(); if (!bookingForm.reportValidity()) return;
+    const data = new FormData(bookingForm);
+    const message = ['Namaste SARITA PHOTO, mujhe photography booking ki jaankari chahiye.','','Name: '+data.get('name'),'Phone: '+data.get('phone'),'Event: '+data.get('event'),'Event date: '+data.get('date'),'Venue / City: '+(data.get('venue')||'Not specified'),'Details: '+(data.get('message')||'Not specified')].join('\\n');
+    window.open('https://wa.me/919314711514?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+  });
+  // Auto-rotating hero photography preview (illustrative images; replace with studio-approved work).
+  const heroPhoto = document.querySelector('.hero-photo');
+  if (heroPhoto) {
+    const slides = ['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85','https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=85','https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=2000&q=85'];
+    let n=0; heroPhoto.style.backgroundImage='url("'+slides[0]+'")'; heroPhoto.style.transition='opacity 700ms ease';
+    window.setInterval(()=>{n=(n+1)%slides.length;heroPhoto.style.opacity='.35';window.setTimeout(()=>{heroPhoto.style.backgroundImage='url("'+slides[n]+'")';heroPhoto.style.opacity='1';},360);},6000);
+  }
+
   // Installable mobile-app experience (PWA). Existing admin and album links remain untouched.
   const prompt = document.getElementById('appPrompt');
   const installButtons = [document.getElementById('installApp'), document.getElementById('installAppSecondary')].filter(Boolean);
