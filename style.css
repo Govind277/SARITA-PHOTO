@@ -186,3 +186,33 @@ a{transition:color .25s,background .25s,border-color .25s,transform .25s}
  .ealbum-open{font-size:10px}
  .footer-inner{align-items:flex-start}
 }
+
+
+/* Premium editorial polish inspired by modern wedding-film portfolios.
+   Intentionally preserves the existing admin, client E-Album, and photo-selection links. */
+:root{--gold:#a92335;--gold-light:#e6b8bf;--line:#ead6d8}
+.site-header{box-shadow:0 8px 28px rgba(65,35,32,.035)}
+.brand img{transition:transform .35s ease}
+.brand:hover img{transform:scale(1.05)}
+.main-nav a{position:relative;padding:8px 0}
+.main-nav a:after{content:"";position:absolute;left:0;bottom:1px;width:0;height:1px;background:var(--gold);transition:width .25s ease}
+.main-nav a:hover:after{width:100%}
+.hero{min-height:700px}
+.hero-photo{background-image:url('hero.jpg.png');background-position:center 42%;filter:saturate(.9);transform:scale(1.015)}
+.hero-shade{background:linear-gradient(90deg,rgba(250,247,241,.96) 0%,rgba(250,247,241,.88) 39%,rgba(250,247,241,.24) 78%,rgba(250,247,241,.12) 100%)}
+.hero h1{max-width:690px}
+.btn-primary{box-shadow:0 8px 22px rgba(164,35,53,.13)}
+.btn-primary:hover{background:#861b2a}
+.intro-image img,.service-card img,.gallery-item img{transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .4s ease}
+.intro-image:hover img,.service-card:hover img{transform:scale(1.018)}
+.service-card{transition:transform .3s ease,box-shadow .3s ease}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(65,35,32,.07)}
+.gallery-item{isolation:isolate}
+.gallery-item:after{z-index:0;pointer-events:none}
+.gallery-item span{z-index:1}
+.review-card{transition:transform .25s ease,box-shadow .25s ease}
+.review-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(65,35,32,.06)}
+.contact-panel{box-shadow:0 16px 42px rgba(65,35,32,.035)}
+.site-footer{padding:32px 0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+@media(max-width:760px){.hero{min-height:660px}.hero-photo{background-position:58% center}.hero-shade{background:linear-gradient(90deg,rgba(250,247,241,.94),rgba(250,247,241,.78))}.hero-inner{padding-top:58px}.hero-copy{max-width:100%}}
