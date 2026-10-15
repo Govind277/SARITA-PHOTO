@@ -15,6 +15,26 @@
       toggle.textContent = '☰';
     }));
   }
+  // Premium welcome popup on app/site launch; close or explore to continue.
+  const welcome = document.getElementById('welcomeModal');
+  const welcomeClose = document.getElementById('welcomeClose');
+  const welcomeBackdrop = document.getElementById('welcomeBackdrop');
+  const welcomeExplore = document.getElementById('welcomeExplore');
+  const closeWelcome = () => {
+    if (welcome) welcome.hidden = true;
+    document.body.classList.remove('welcome-open');
+  };
+  if (welcome) {
+    welcome.hidden = false;
+    document.body.classList.add('welcome-open');
+    if (welcomeClose) welcomeClose.addEventListener('click', closeWelcome);
+    if (welcomeBackdrop) welcomeBackdrop.addEventListener('click', closeWelcome);
+    if (welcomeExplore) welcomeExplore.addEventListener('click', () => {
+      closeWelcome();
+      document.getElementById('about')?.scrollIntoView({behavior:'smooth'});
+    });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeWelcome(); });
+  }
   // Installable mobile-app experience (PWA). Existing admin and album links remain untouched.
   const prompt = document.getElementById('appPrompt');
   const installButtons = [document.getElementById('installApp'), document.getElementById('installAppSecondary')].filter(Boolean);
