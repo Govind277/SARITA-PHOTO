@@ -238,3 +238,28 @@ a{transition:color .25s,background .25s,border-color .25s,transform .25s}
 .install-help.install-help-open{display:block}
 @media(max-width:760px){.app-prompt{padding:10px 5%;gap:9px}.app-prompt-icon{width:36px;height:36px}.app-prompt-copy strong{font-size:10px}.app-prompt-copy span{font-size:9px}.app-install-btn{padding:9px 10px}.mobile-app-section{padding-bottom:65px}.mobile-app-card{grid-template-columns:auto 1fr;gap:17px;padding:22px}.mobile-app-symbol{width:50px;height:50px;font-size:20px}.mobile-app-copy h2{font-size:34px}.mobile-app-actions{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center}.install-help{grid-column:1/-1}.mobile-app-actions .btn{font-size:10px}}
 @media(max-width:420px){.app-prompt-copy span{display:none}.app-prompt-copy strong{font-size:9px}.app-install-btn{font-size:9px;padding:8px}.mobile-app-card{padding:18px}}
+
+/* Welcome popup: premium mobile-first app launch experience */
+.welcome-modal[hidden]{display:none!important}
+.welcome-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:16px;isolation:isolate}
+.welcome-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:rgba(24,14,17,.78);backdrop-filter:blur(8px);cursor:pointer;z-index:-1}
+.welcome-card{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;width:min(760px,100%);max-height:min(90dvh,850px);overflow:auto;background:#fffaf4;border:1px solid rgba(225,195,157,.7);box-shadow:0 30px 100px rgba(0,0,0,.35);animation:welcomeRise .35s ease-out}
+.welcome-close{position:absolute;right:12px;top:10px;z-index:2;width:36px;height:36px;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(34,21,24,.55);color:white;font-size:25px;line-height:1;cursor:pointer}
+.welcome-cover{min-height:420px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;color:#f9ecda;background:radial-gradient(ellipse at 50% 25%,rgba(163,73,75,.4),transparent 42%),linear-gradient(145deg,#29191e,#513039 52%,#21161a);position:relative;overflow:hidden}
+.welcome-cover:before,.welcome-cover:after{content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(222,185,132,.28);border-radius:50%;pointer-events:none}
+.welcome-cover:before{width:310px;height:310px}.welcome-cover:after{width:220px;height:220px}
+.welcome-monogram{display:grid;place-items:center;width:88px;height:88px;border:1px solid #d6b47e;border-radius:50%;font:500 36px var(--serif);letter-spacing:3px;color:#f3d9b2;box-shadow:0 0 0 8px rgba(214,180,126,.07);z-index:1}
+.welcome-kicker,.welcome-est{font-size:8px;letter-spacing:2px;line-height:1.8;z-index:1}
+.welcome-script{font:italic 31px/1.1 var(--serif);color:#f0cda5;z-index:1}
+.welcome-est{max-width:230px;color:#d9c0b0}
+.welcome-body{padding:clamp(24px,4vw,42px);display:flex;flex-direction:column;justify-content:center}
+.welcome-body h2{font:500 clamp(38px,4.5vw,53px)/.98 var(--serif);margin:13px 0 17px;color:#352124}
+.welcome-body h2 em{color:#842536}
+.welcome-body>p:not(.eyebrow){font-size:12px;line-height:1.9;color:#786e65;margin-bottom:22px}
+.welcome-album{width:100%;justify-content:space-between}
+.welcome-whatsapp{font-size:11px;text-align:center;text-decoration:none;color:#842536;margin-top:17px}
+.welcome-explore{margin-top:18px;border:0;border-top:1px solid #ead6d8;padding-top:14px;background:transparent;color:#786e65;font:600 10px var(--sans);letter-spacing:1px;cursor:pointer}
+body.welcome-open{overflow:hidden}
+@keyframes welcomeRise{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:600px){.welcome-modal{padding:12px}.welcome-card{grid-template-columns:1fr;width:min(440px,100%);max-height:92dvh}.welcome-cover{min-height:180px;padding:22px 18px;gap:9px}.welcome-monogram{width:57px;height:57px;font-size:25px}.welcome-script{font-size:25px}.welcome-kicker,.welcome-est{font-size:7px}.welcome-cover:before{width:220px;height:220px}.welcome-cover:after{width:165px;height:165px}.welcome-body{padding:23px 22px 24px}.welcome-body h2{font-size:40px;margin:8px 0 12px}.welcome-body>p:not(.eyebrow){font-size:12px;margin-bottom:16px}.welcome-whatsapp{margin-top:13px}.welcome-explore{margin-top:14px}}
+@media(prefers-reduced-motion:reduce){.welcome-card{animation:none}}
