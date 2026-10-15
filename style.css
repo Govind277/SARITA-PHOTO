@@ -216,3 +216,25 @@ a{transition:color .25s,background .25s,border-color .25s,transform .25s}
 .site-footer{padding:32px 0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 @media(max-width:760px){.hero{min-height:660px}.hero-photo{background-position:58% center}.hero-shade{background:linear-gradient(90deg,rgba(250,247,241,.94),rgba(250,247,241,.78))}.hero-inner{padding-top:58px}.hero-copy{max-width:100%}}
+
+/* Installable mobile-app experience */
+.app-prompt{position:relative;z-index:20;display:flex;align-items:center;gap:12px;padding:11px max(5%,calc((100% - 1180px)/2));background:#2b1d20;color:#fff8f0;border-bottom:1px solid #65474a}
+.app-prompt[hidden]{display:none}
+.app-prompt-icon,.mobile-app-symbol{display:grid;place-items:center;flex:0 0 auto;width:42px;height:42px;border:1px solid #d6b47e;border-radius:12px;color:#f4d6b0;font:600 17px var(--serif);letter-spacing:1px}
+.app-prompt-copy{display:flex;flex:1;min-width:0;flex-direction:column;line-height:1.4}
+.app-prompt-copy strong{font-size:11px;letter-spacing:.2px}
+.app-prompt-copy span{font-size:10px;color:#d9c7bd;margin-top:3px}
+.app-install-btn{border:1px solid #d6b47e;background:#d6b47e;color:#2b1d20;padding:10px 14px;font:700 10px var(--sans);white-space:nowrap;cursor:pointer}
+.app-dismiss{border:0;background:transparent;color:#f7e8e8;font-size:22px;padding:0 3px;cursor:pointer}
+.mobile-app-section{padding:0 0 90px;background:#f8f3ec}
+.mobile-app-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:25px;padding:34px;border:1px solid #dfc8b9;background:#fffdfa;box-shadow:0 16px 42px rgba(65,35,32,.04)}
+.mobile-app-symbol{width:64px;height:64px;border-radius:18px;background:#2b1d20;font-size:24px}
+.mobile-app-copy h2{font:500 clamp(30px,3.5vw,43px)/1.05 var(--serif);margin:8px 0;color:#352124}
+.mobile-app-copy h2 em{color:#842536}
+.mobile-app-copy>p:last-child{font-size:12px;color:var(--muted);line-height:1.8;max-width:560px}
+.mobile-app-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.mobile-app-actions .btn{white-space:nowrap;cursor:pointer}
+.install-help{grid-column:2/4;font-size:10px;line-height:1.8;color:#786e65;display:none}
+.install-help.install-help-open{display:block}
+@media(max-width:760px){.app-prompt{padding:10px 5%;gap:9px}.app-prompt-icon{width:36px;height:36px}.app-prompt-copy strong{font-size:10px}.app-prompt-copy span{font-size:9px}.app-install-btn{padding:9px 10px}.mobile-app-section{padding-bottom:65px}.mobile-app-card{grid-template-columns:auto 1fr;gap:17px;padding:22px}.mobile-app-symbol{width:50px;height:50px;font-size:20px}.mobile-app-copy h2{font-size:34px}.mobile-app-actions{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;align-items:center}.install-help{grid-column:1/-1}.mobile-app-actions .btn{font-size:10px}}
+@media(max-width:420px){.app-prompt-copy span{display:none}.app-prompt-copy strong{font-size:9px}.app-install-btn{font-size:9px;padding:8px}.mobile-app-card{padding:18px}}
