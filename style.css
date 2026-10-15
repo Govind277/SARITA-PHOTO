@@ -331,3 +331,20 @@ body{background:#fffaf3;color:#4a1720}
 }
 @media(display-mode:standalone){.site-header{padding-top:env(safe-area-inset-top)}.mobile-bottom-nav{bottom:calc(8px + env(safe-area-inset-bottom))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* Wedding E-Album + premium branded welcome screen */
+.welcome-cover{background:radial-gradient(circle at 50% 18%,rgba(255,220,154,.24),transparent 36%),linear-gradient(145deg,#9d102e,#d52c43 56%,#6f0b25);gap:14px}
+.welcome-logo-frame{position:relative;z-index:1;width:104px;height:104px;display:grid;place-items:center;border:2px solid #e8c77e;border-radius:50%;background:rgba(255,250,243,.96);box-shadow:0 0 0 7px rgba(232,199,126,.14),0 12px 34px rgba(60,0,15,.22);animation:brandFloat 3s ease-in-out infinite}
+.welcome-logo-image{width:82%;height:82%;object-fit:contain;border-radius:50%;animation:brandGlow 2.8s ease-in-out infinite}
+.welcome-logo-frame .welcome-monogram{position:absolute;inset:0;margin:auto;background:#a91431;color:#ffe6af}
+.welcome-kicker{color:#ffe8b6;animation:welcomeTextIn .8s .15s both}
+.welcome-script{color:#fff1d7;text-shadow:0 3px 18px rgba(68,0,17,.25);animation:welcomeTextIn .8s .3s both}
+.welcome-est{color:#fff3e9;animation:welcomeTextIn .8s .45s both}
+.welcome-hindi{z-index:1;color:#ffe6b0;font-size:12px;font-weight:700;letter-spacing:.2px;animation:welcomeTextIn .8s .6s both}
+.welcome-body .eyebrow{letter-spacing:2px}
+@keyframes brandFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes brandGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(232,199,126,0))}50%{filter:drop-shadow(0 0 8px rgba(232,199,126,.55))}}
+@keyframes welcomeTextIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.welcome-cover{min-height:245px;gap:10px}.welcome-logo-frame{width:78px;height:78px}.welcome-hindi{font-size:11px}.welcome-script{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.welcome-logo-frame,.welcome-logo-image,.welcome-kicker,.welcome-script,.welcome-est,.welcome-hindi{animation:none!important}}
