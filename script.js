@@ -25,8 +25,14 @@
     document.body.classList.remove('welcome-open');
   };
   if (welcome) {
-    welcome.hidden = false;
-    document.body.classList.add('welcome-open');
+    let alreadyWelcomed = false;
+    try { alreadyWelcomed = sessionStorage.getItem('sarita-photo-welcomed') === '1'; } catch (_) {}
+    if (alreadyWelcomed) welcome.hidden = true;
+    else {
+      welcome.hidden = false;
+      try { sessionStorage.setItem('sarita-photo-welcomed', '1'); } catch (_) {}
+      document.body.classList.add('welcome-open');
+    }
     if (welcomeClose) welcomeClose.addEventListener('click', closeWelcome);
     if (welcomeBackdrop) welcomeBackdrop.addEventListener('click', closeWelcome);
     if (welcomeExplore) welcomeExplore.addEventListener('click', () => {
@@ -43,16 +49,10 @@
   if (bookingForm) bookingForm.addEventListener('submit', event => {
     event.preventDefault(); if (!bookingForm.reportValidity()) return;
     const data = new FormData(bookingForm);
-    const message = ['Namaste SARITA PHOTO, mujhe photography booking ki jaankari chahiye.','','Name: '+data.get('name'),'Phone: '+data.get('phone'),'Event: '+data.get('event'),'Event date: '+data.get('date'),'Venue / City: '+(data.get('venue')||'Not specified'),'Details: '+(data.get('message')||'Not specified')].join('\\n');
+    const message = ['Namaste SARITA PHOTO, mujhe photography booking ki jaankari chahiye.','','Name: '+data.get('name'),'Phone: '+data.get('phone'),'Event: '+data.get('event'),'Event date: '+data.get('date'),'Venue / City: '+(data.get('venue')||'Not specified'),'Details: '+(data.get('message')||'Not specified')].join('\n');
     window.open('https://wa.me/919314711514?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
   });
-  // Auto-rotating hero photography preview (illustrative images; replace with studio-approved work).
-  const heroPhoto = document.querySelector('.hero-photo');
-  if (heroPhoto) {
-    const slides = ['https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85','https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=85','https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=2000&q=85'];
-    let n=0; heroPhoto.style.backgroundImage='url("'+slides[0]+'")'; heroPhoto.style.transition='opacity 700ms ease';
-    window.setInterval(()=>{n=(n+1)%slides.length;heroPhoto.style.opacity='.35';window.setTimeout(()=>{heroPhoto.style.backgroundImage='url("'+slides[n]+'")';heroPhoto.style.opacity='1';},360);},6000);
-  }
+  // Keep the studio-approved hero image defined in style.css; do not replace it with stock slides.
 
   // Installable mobile-app experience (PWA). Existing admin and album links remain untouched.
   const prompt = document.getElementById('appPrompt');
@@ -62,6 +62,7 @@
   const help = document.getElementById('installHelp');
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
   if (prompt && isStandalone) prompt.hidden = true;
+  try { if (prompt && sessionStorage.getItem('sarita-install-prompt-dismissed') === '1') prompt.hidden = true; } catch (_) {}
   window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
     installEvent = event;
@@ -77,7 +78,10 @@
       help.scrollIntoView({behavior:'smooth',block:'nearest'});
     }
   }));
-  if (dismiss && prompt) dismiss.addEventListener('click', () => { prompt.hidden = true; });
+  if (dismiss && prompt) dismiss.addEventListener('click', () => {
+    prompt.hidden = true;
+    try { sessionStorage.setItem('sarita-install-prompt-dismissed', '1'); } catch (_) {}
+  });
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
     window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
   }
