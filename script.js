@@ -85,6 +85,44 @@
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
     window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
   }
+  // Subtle scroll-reveal animations; content stays visible if observers are unsupported.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealTargets = '.service-card, .gallery-item, .process-steps article, .review-card, .gallery-promise-card';
+  let revealObserver = null;
+  const revealWithin = (root) => {
+    if (!root || reduceMotion || !('IntersectionObserver' in window)) return;
+    const nodes = [];
+    if (root.matches && root.matches(revealTargets)) nodes.push(root);
+    if (root.querySelectorAll) nodes.push(...root.querySelectorAll(revealTargets));
+    nodes.forEach(node => {
+      if (node.classList.contains('scroll-reveal')) return;
+      node.classList.add('scroll-reveal');
+      revealObserver.observe(node);
+    });
+  };
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12,rootMargin:'0px 0px -24px 0px'});
+    revealWithin(document);
+    const mediaGrid = document.getElementById('liveMediaGrid');
+    if (mediaGrid && 'MutationObserver' in window) {
+      new MutationObserver(() => revealWithin(mediaGrid)).observe(mediaGrid,{childList:true});
+    }
+  }
+  // Back-to-top appears only after the visitor has scrolled.
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    const updateBackToTop = () => backToTop.classList.toggle('is-visible', window.scrollY > 500);
+    window.addEventListener('scroll', updateBackToTop, {passive:true});
+    updateBackToTop();
+    backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'}));
+  }
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
