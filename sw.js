@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sarita-photo-shell-v6';
+const CACHE_NAME = 'sarita-photo-shell-v7';
 const APP_SHELL = ['./', './index.html', './style.css', './script.js', './manifest.webmanifest'];
 
 self.addEventListener('install', event => {
