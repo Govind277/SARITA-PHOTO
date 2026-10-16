@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SARITA PHOTO — Photo & Video Manager</title>
+<style>
+:root{--ink:#29221d;--muted:#75685d;--gold:#a66c3e;--paper:#faf7f1;--line:#e6d9cb}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 Arial,sans-serif}
+header{background:#29221d;color:#fff;padding:24px 18px}header .wrap,main{max-width:1040px;margin:auto}header small{letter-spacing:2px;color:#e7c5a3}h1{font-size:clamp(25px,4vw,38px);margin:5px 0}header p{margin:0;color:#e5d8cc}
+main{padding:22px 16px 48px}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 8px 25px #3020140b}
+h2{font-size:21px;margin:0 0 12px}label{display:block;font-weight:700;margin:12px 0 6px}input,textarea{width:100%;padding:12px;border:1px solid #d7c7b8;border-radius:8px;font:inherit;background:#fff}input[type=file]{padding:10px}textarea{min-height:72px;resize:vertical}
+button{border:0;border-radius:8px;background:var(--gold);color:white;font-weight:700;padding:11px 15px;cursor:pointer;margin:8px 6px 0 0}button.secondary{background:#55463a}button.danger{background:#a33d32}button:disabled{opacity:.55;cursor:wait}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.row>*{flex:1}.status{padding:10px 12px;border-radius:8px;background:#f4eee7;color:#574536;margin-top:12px;white-space:pre-wrap}.hint{font-size:13px;color:var(--muted)}.items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.item{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}.item img,.item iframe{width:100%;height:200px;object-fit:cover;background:#201a16;border:0;display:block}.item-body{padding:12px}.item-name{font-weight:700;overflow-wrap:anywhere}.tag{display:inline-block;font-size:12px;border-radius:20px;padding:3px 8px;background:#f1e6da;margin:5px 0}.tag.live{background:#e0f1e5;color:#1b6338}.tag.draft{background:#f5e8d7;color:#81541f}.empty{border:1px dashed #cbb9a7;border-radius:10px;padding:20px;color:var(--muted);text-align:center;grid-column:1/-1}
+@media(max-width:720px){.items{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.items{grid-template-columns:1fr}.panel{padding:15px}.item img,.item iframe{height:240px}}
+</style></head>
+<body>
+<header><div class="wrap"><small>SARITA PHOTO · STUDIO TOOLS</small><h1>Photo & Video Manager</h1><p>Upload your work, review it, then publish it to the main website.</p></div></header>
+<main>
+<section class="panel">
+<h2>1. Admin access</h2>
+<label for="adminKey">Private admin key</label><input id="adminKey" type="password" autocomplete="current-password" placeholder="Enter your private key">
+<p class="hint">The key is kept only in this page while it is open. Never share it publicly.</p>
+<button id="connectBtn" onclick="connect()">Connect to media library</button><div id="status" class="status" role="status">Enter your admin key to continue.</div>
+</section>
+<section class="panel">
+<h2>2. Upload photos or videos</h2>
+<label for="files">Choose files (JPG, PNG, WEBP, GIF, MP4, WEBM, MOV)</label><input id="files" type="file" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime" multiple>
+<label for="caption">Caption (optional; applies to all selected files)</label><textarea id="caption" maxlength="180" placeholder="e.g. Wedding highlights · SARITA PHOTO"></textarea>
+<p class="hint">Maximum 20 MB per file. Newly uploaded files stay unpublished until you press Publish.</p>
+<button id="uploadBtn" onclick="uploadSelected()">Upload selected files</button>
+</section>
+<section class="panel">
+<div class="row"><div><h2>3. Media library</h2><p class="hint">Publish to show it under the hero image on your main website.</p></div><div style="text-align:right"><button class="secondary" onclick="loadMedia()">Refresh list</button></div></div>
+<div id="items" class="items"><div class="empty">Connect using your admin key to load media.</div></div>
+</section>
+</main>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+function key(){return $('adminKey').value.trim()}
+function status(msg){$('status').textContent=msg}
+function fail(err){status('Error: '+(err&&err.message?err.message:err));}
+window.connect=function(){if(!key()){status('Please enter the admin key.');return} $('connectBtn').disabled=true;google.script.run.withSuccessHandler(()=>{status('Connected successfully.');loadMedia();}).withFailureHandler(fail).listMedia(key());$('connectBtn').disabled=false;};
+window.loadMedia=function(){if(!key()){status('Enter the admin key first.');return}$('items').innerHTML='<div class="empty">Loading media…</div>';google.script.run.withSuccessHandler(renderMedia).withFailureHandler(fail).listMedia(key());};
+function renderMedia(list){$('items').replaceChildren();if(!list||!list.length){$('items').innerHTML='<div class="empty">No media uploaded yet. Upload photos/videos above.</div>';return}
+list.forEach(item=>{const card=document.createElement('article');card.className='item';const isVideo=String(item.mimeType||'').startsWith('video/');let preview;if(isVideo){preview=document.createElement('iframe');preview.src=item.previewUrl;preview.title=item.name;preview.loading='lazy';preview.setAttribute('allow','fullscreen');preview.setAttribute('allowfullscreen','')}else{preview=document.createElement('img');preview.src=item.thumbnailUrl;preview.alt=item.name;preview.loading='lazy'}card.appendChild(preview);const body=document.createElement('div');body.className='item-body';const name=document.createElement('div');name.className='item-name';name.textContent=item.name;body.appendChild(name);const tag=document.createElement('span');tag.className='tag '+(item.published?'live':'draft');tag.textContent=item.published?'Published on website':'Unpublished draft';body.appendChild(tag);const caption=document.createElement('textarea');caption.maxLength=180;caption.placeholder='Caption';caption.value=item.caption||'';caption.setAttribute('aria-label','Caption for '+item.name);body.appendChild(caption);const publish=document.createElement('button');publish.textContent=item.published?'Unpublish':'Publish';publish.className=item.published?'secondary':'';publish.onclick=()=>changePublish(item,publish,caption);body.appendChild(publish);const save=document.createElement('button');save.textContent='Save caption';save.className='secondary';save.onclick=()=>saveCaption(item,save,caption);body.appendChild(save);const del=document.createElement('button');del.textContent='Delete';del.className='danger';del.onclick=()=>removeItem(item,del);body.appendChild(del);card.appendChild(body);$('items').appendChild(card);});}
+function changePublish(item,btn,caption){btn.disabled=true;google.script.run.withSuccessHandler(()=>{status(item.published?'Media unpublished.':'Media published to main website.');loadMedia()}).withFailureHandler(e=>{fail(e);btn.disabled=false}).setMediaPublished(item.id,!item.published,caption.value,key())}
+function saveCaption(item,btn,caption){btn.disabled=true;google.script.run.withSuccessHandler(()=>{status('Caption saved.');loadMedia()}).withFailureHandler(e=>{fail(e);btn.disabled=false}).setMediaPublished(item.id,item.published,caption.value,key())}
+function removeItem(item,btn){if(!confirm('Delete "'+item.name+'" permanently from this media library?'))return;btn.disabled=true;google.script.run.withSuccessHandler(()=>{status('Media deleted.');loadMedia()}).withFailureHandler(e=>{fail(e);btn.disabled=false}).deleteMedia(item.id,key())}
+window.uploadSelected=async function(){const files=Array.from($('files').files||[]);if(!key()){status('Enter the admin key first.');return}if(!files.length){status('Choose at least one file.');return}const caption=$('caption').value;const btn=$('uploadBtn');btn.disabled=true;for(let i=0;i<files.length;i++){const f=files[i];if(f.size>20*1024*1024){status('Skipped '+f.name+': file is larger than 20 MB.');continue}status('Uploading '+(i+1)+'/'+files.length+': '+f.name+'…');try{const base64=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=()=>reject(new Error('Could not read '+f.name));reader.readAsDataURL(f)});await new Promise((resolve,reject)=>google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).uploadMedia({name:f.name,mimeType:f.type,base64:base64,caption:caption},key()));}catch(e){status('Upload error for '+f.name+': '+(e&&e.message?e.message:e));btn.disabled=false;return}}$('files').value='';btn.disabled=false;status('Upload process finished. Review your files below and publish the ones you want on the website.');loadMedia();};
+})();
+</script>
+</body></html>
