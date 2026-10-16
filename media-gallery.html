@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#241b18">
+<meta name="description" content="Published photography and films from SARITA PHOTO, Bikaner.">
+<title>Media Gallery | SARITA PHOTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#241b18;--paper:#f7f3ed;--gold:#b77b4b;--muted:#766a60}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif}
+header{background:var(--ink);color:#fff;padding:22px 5vw;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{color:#fff;text-decoration:none;letter-spacing:.12em;font-size:18px;font-weight:700}.brand small{display:block;font-size:10px;letter-spacing:.16em;color:#c8b9aa;margin-top:5px}
+header a.back{color:#f4d8bc;text-decoration:none;font-size:13px}
+main{max-width:1200px;margin:auto;padding:54px 22px 80px}.eyebrow{text-transform:uppercase;letter-spacing:.2em;color:var(--gold);font-size:11px;font-weight:700}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(42px,7vw,76px);line-height:.98;margin:12px 0}h1 em{color:#98623d} .intro{color:var(--muted);max-width:650px;line-height:1.7}
+.status{margin:26px 0;color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.card{background:#fff;border:1px solid #e8ded3;border-radius:14px;overflow:hidden;box-shadow:0 5px 24px #241b180a}
+.media{display:block;width:100%;height:300px;object-fit:cover;background:#e7ddd2}.video{width:100%;height:300px;background:#171311;display:block}
+.caption{padding:15px 16px 17px;font-size:14px;line-height:1.5;overflow-wrap:anywhere}.filename{display:block;color:#88796c;font-size:11px;margin-top:5px}
+.empty{padding:34px;border:1px dashed #cbbbaa;border-radius:14px;color:var(--muted);line-height:1.7}
+footer{text-align:center;padding:24px;color:#cbbdb0;background:var(--ink);font-size:12px}footer a{color:#f4d8bc}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.media,.video{height:240px}}
+@media(max-width:540px){header{padding:18px;align-items:flex-start}.brand{font-size:15px}header a.back{font-size:12px}main{padding:38px 16px 56px}.grid{grid-template-columns:1fr;gap:14px}.media,.video{height:auto;max-height:72vh;min-height:220px}.caption{padding:13px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="./index.html">SARITA PHOTO<small>PHOTOGRAPHY · FILMS · MEMORIES</small></a><a class="back" href="./index.html">← Main Website</a></header>
+<main>
+<p class="eyebrow">SELECTED MOMENTS · BIKANER, RAJASTHAN</p>
+<h1>Stories in <em>frames.</em></h1>
+<p class="intro">Explore the photographs and films published by SARITA PHOTO. New memories will appear here as they are approved in the Media Gallery Manager.</p>
+<div class="status" id="status" role="status">Published media is loading…</div>
+<div class="grid" id="gallery"></div>
+</main>
+<footer>© <span id="year"></span> SARITA PHOTO · Creating Timeless Wedding Stories Since 1985 · <a href="./index.html">Visit main website</a></footer>
+<script>
+(function(){
+  'use strict';
+  var endpoint = 'https://script.google.com/macros/s/AKfycbxxqrRKJduzw0F-2qwRYTnycP7s7Cnz4Y77EaL6FEO8kMk2qUD9JdvIA71gUoPxQtelfQ/exec';
+  var status = document.getElementById('status');
+  var gallery = document.getElementById('gallery');
+  document.getElementById('year').textContent = new Date().getFullYear();
+  window.SARITAGalleryCallback = function(payload){
+    if (!payload || payload.ok !== true || !Array.isArray(payload.items)) {
+      status.textContent = 'Gallery data could not be read. Please try again later.'; return;
+    }
+    gallery.replaceChildren();
+    if (!payload.items.length) {
+      status.textContent = 'Gallery is ready. New photos and videos will appear here after they are published by SARITA PHOTO.';
+      var empty = document.createElement('div'); empty.className='empty';
+      empty.textContent='No media has been published yet. Please visit again soon.';
+      gallery.appendChild(empty); return;
+    }
+    status.textContent = payload.items.length + ' published item' + (payload.items.length===1?'':'s');
+    payload.items.forEach(function(item){
+      var card=document.createElement('article'); card.className='card';
+      var media;
+      var isVideo=String(item.mimeType||'').indexOf('video/')===0;
+      if(isVideo){
+        media=document.createElement('iframe'); media.className='video';
+        media.src=item.previewUrl; media.title=item.caption||item.name||'SARITA PHOTO video';
+        media.loading='lazy'; media.setAttribute('allow','autoplay; fullscreen; picture-in-picture'); media.setAttribute('allowfullscreen','');
+        media.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+      }else{
+        media=document.createElement('a'); media.href=item.previewUrl||item.url||'#'; media.target='_blank'; media.rel='noopener';
+        var img=document.createElement('img'); img.className='media'; img.src=item.thumbnailUrl||item.url; img.alt=item.caption||item.name||'SARITA PHOTO photograph'; img.loading='lazy';
+        media.appendChild(img);
+      }
+      card.appendChild(media);
+      var text=document.createElement('div'); text.className='caption'; text.textContent=item.caption||'A moment captured by SARITA PHOTO';
+      if(item.name){var name=document.createElement('span');name.className='filename';name.textContent=item.name;text.appendChild(name)}
+      card.appendChild(text);gallery.appendChild(card);
+    });
+  };
+  var script=document.createElement('script');
+  script.src=endpoint+'?action=gallery&callback=SARITAGalleryCallback';
+  script.onerror=function(){status.textContent='Gallery temporarily unavailable. Please refresh or try again later.'};
+  document.body.appendChild(script);
+})();
+</script>
+</body>
+</html>
