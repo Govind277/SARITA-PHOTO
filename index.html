@@ -64,11 +64,10 @@
       var card=document.createElement('article');card.className='live-media-card';
       var isVideo=String(item.mimeType||'').indexOf('video/')===0;
       var media;
-      if(isVideo){media=document.createElement('iframe');media.src=item.previewUrl;media.title=item.caption||item.name||'SARITA PHOTO video';media.loading='lazy';media.setAttribute('allow','autoplay; fullscreen; picture-in-picture');media.setAttribute('allowfullscreen','');media.setAttribute('referrerpolicy','strict-origin-when-cross-origin');}
-      else{media=document.createElement('a');media.href=item.previewUrl||item.url||'#';media.target='_blank';media.rel='noopener';var img=document.createElement('img');img.src=item.thumbnailUrl||item.url;img.alt=item.caption||item.name||'SARITA PHOTO photograph';img.loading='lazy';media.appendChild(img);}
+      if(isVideo){media=document.createElement('iframe');media.src=item.previewUrl;media.title=item.caption||'SARITA PHOTO video';media.loading='lazy';media.setAttribute('allow','autoplay; fullscreen; picture-in-picture');media.setAttribute('allowfullscreen','');media.setAttribute('referrerpolicy','strict-origin-when-cross-origin');}
+      else{media=document.createElement('a');media.href=item.previewUrl||item.url||'#';media.target='_blank';media.rel='noopener';var img=document.createElement('img');img.src=item.thumbnailUrl||item.url;img.alt=item.caption||'SARITA PHOTO photograph';img.loading='lazy';media.appendChild(img);}
       card.appendChild(media);
       var caption=document.createElement('div');caption.className='live-media-caption';caption.textContent=item.caption||'A moment captured by SARITA PHOTO';
-      if(item.name){var name=document.createElement('small');name.textContent=item.name;caption.appendChild(name);}
       card.appendChild(caption);grid.appendChild(card);
     });
   };
