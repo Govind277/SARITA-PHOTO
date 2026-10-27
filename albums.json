@@ -1,0 +1,5 @@
+[
+  {
+    "_instructions": "Add only albums you want every website visitor to see. Required: title and url. Optional: category, description, cover. The url must be a public eAlbum link."
+  }
+]
