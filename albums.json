@@ -1,5 +1,8 @@
 [
   {
-    "_instructions": "Add only albums you want every website visitor to see. Required: title and url. Optional: category, description, cover. The url must be a public eAlbum link."
+    "title": "Hemlata Weds Naveen",
+    "category": "WEDDING E-ALBUM",
+    "description": "Wedding memories of Hemlata & Naveen, captured by SARITA PHOTO.",
+    "url": "https://view.ealbum.in/?c=73007922M9"
   }
 ]
